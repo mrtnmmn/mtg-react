@@ -1,0 +1,36 @@
+.mainDivNav {
+    background-color: #282c34;
+    color: #00cf77;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.innerDiv {
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.links {
+    padding-left: 20px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
+
+a {
+    color: #00cf77;
+}
+
+a:visited {
+    color: #00fee0;
+}

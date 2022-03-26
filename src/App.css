@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+/*Borrar por encima*/
+
+.mainDiv {
+  margin: 0px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.divRandom {
+  background-color:  #434343 ;
+  width: 100%;
+  height: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
