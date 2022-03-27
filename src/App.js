@@ -8,7 +8,7 @@ function App() {
     <div className="mainDiv">
       <NavBar/>
       <Routes>
-        <Route path='/' element = {<RandomCard/>}/>
+        <Route path='/random' element = {<RandomCard/>}/>
       </Routes>
     </div>
   );
