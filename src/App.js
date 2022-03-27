@@ -7,9 +7,6 @@ function App() {
   return (
     <div className="mainDiv">
       <NavBar/>
-      <div className='main'>
-        
-      </div>
       <RandomCard/>
     </div>
   );

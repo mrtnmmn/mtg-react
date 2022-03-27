@@ -5,3 +5,23 @@
     justify-content: center;
     background-color: #434343;
 }
+
+.cardDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 50px; 
+    padding: 20px;
+    border-radius: 25px;
+    background-color: white;
+}
+
+img {
+    max-height: 50vh;
+    margin-right: 20px;
+}
+
+p {
+    color: black;
+}
