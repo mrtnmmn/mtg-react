@@ -39,6 +39,10 @@
 
 /*Borrar por encima*/
 
+htm, body {
+  background-color: #434343;
+}
+
 .mainDiv {
   margin: 0px;
   height: 100%;
