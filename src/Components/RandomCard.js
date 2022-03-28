@@ -7,7 +7,7 @@ function RandomCard() {
     const [card, setCard] = useState()
     const [loadedImg, setLoadedImg] = useState(false)
 
-    const api = 'https://api.scryfall.com/cards/random'
+    const api = 'http://localhost:5300/random'
 
     useEffect(() => {
 
@@ -18,7 +18,7 @@ function RandomCard() {
     function getCard() {
         fetch(api)
         .then((res) => res.json())
-        .then((data) => setCard(data))
+        .then((data) => setCard(data.data))
         .then(console.log(card))
     }
 

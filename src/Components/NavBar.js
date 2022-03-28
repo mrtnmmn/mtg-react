@@ -8,6 +8,7 @@ function NavBar() {
             <div className='innerDiv'>
                 <a href='https://magic.wizards.com/es' className='links'><img src={logo} className='logo'></img></a>
                 <Link to="/random" className='links'>Random Card</Link> 
+                <Link to="/finder" className='links'>Card Finder</Link> 
             </div>
             <div className='innerDiv'>
                 prueba
