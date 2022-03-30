@@ -29,8 +29,12 @@
 
 a {
     color: #00cf77;
+    text-decoration: none;
+    font-weight: bolder;
 }
 
 a:visited {
-    color: #00fee0;
+    color: #00cf77;
+    text-decoration: none;
+    font-weight: bolder;
 }

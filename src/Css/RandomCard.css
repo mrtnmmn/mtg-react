@@ -6,9 +6,17 @@
     flex-direction: column;
 }
 
-button {
-    background-color: #00cf77;
+.refreshButton {
+    background-color: #434343;
     border: none; 
     padding: 5px;
     border-radius: 5rem;
+    color: white;
+    padding: 20px;
+    font-size: larger;
+}
+
+.refreshButton:hover {
+    background-color: #00cf77;
+    color: black;
 }

@@ -15,16 +15,11 @@ function Card(cardProp) {
 
     console.log(card)
 
-    const [prueba, setPrueba] = useState(['hola'])
-    
     let hasStats = true
 
     if (!card.power) {
         hasStats = false
     }
-
-    console.log(mana)
-    console.log('mana: ' + typeof(convertedMana))
 
     useEffect(() => {
         setConvertedMana([])
@@ -50,8 +45,6 @@ function Card(cardProp) {
                     setConvertedMana(convertedMana => [...convertedMana, <h3 className='blankMana'>{mana[i+1]}</h3>])
             }
         }
-
-        setPrueba(setPrueba => [...prueba, 'fire'])
     } ,[cardProp.card])
 
     return (  

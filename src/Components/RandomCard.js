@@ -31,7 +31,7 @@ function RandomCard() {
                 </div>
                 : 'Loading...'}
             </div>
-            <button onClick={getCard}>Refresh card</button>
+            <button onClick={getCard} className='refreshButton'>Refresh card</button>
         </div>
     );
 }
