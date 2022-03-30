@@ -14,7 +14,6 @@ function RandomCard() {
     //uncomment next line for backend-using frontend
     //const api = 'http://localhost:5300/random'
 
-
     useEffect(() => {
 
         getCard()

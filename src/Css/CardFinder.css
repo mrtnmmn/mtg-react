@@ -12,7 +12,9 @@
     border: #00cf77;
     border-radius: 9999px;
     height: 30px;
-    width: 30px;
+    width: 60px;
+    color: white;
+    font-weight: bolder;
 }
 
 .divFinder {
