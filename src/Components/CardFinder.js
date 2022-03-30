@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import '../Css/CardFinder.css'
 
+import Card from './Card.js'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { famagnifyingglass } from '@fortawesome/free-solid-svg-icons'
 
@@ -57,6 +59,10 @@ function CardFinder() {
                 <input type="text" name="card" value={cardName} onChange={handleChange} className='finder'/>
                 <button type='submit' className='findButton'>find</button>
             </form>
+            {card ? 
+            <div><Card card={card}/> </div>
+            : <></>
+            }
         </div>
     );
 }

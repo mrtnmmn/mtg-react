@@ -3,25 +3,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #434343;
+    flex-direction: column;
 }
 
-.cardDiv {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin: 50px; 
-    padding: 20px;
-    border-radius: 25px;
-    background-color: white;
-}
-
-img {
-    max-height: 50vh;
-    margin-right: 20px;
-}
-
-p {
-    color: black;
+button {
+    background-color: #00cf77;
+    border: none; 
+    padding: 5px;
+    border-radius: 5rem;
 }

@@ -40,7 +40,7 @@
 /*Borrar por encima*/
 
 htm, body {
-  background-color: #434343;
+  background-color: #232323;
 }
 
 .mainDiv {
@@ -51,7 +51,7 @@ htm, body {
 }
 
 .divRandom {
-  background-color:  #434343 ;
+  background-color:  #232323 ;
   width: 100%;
   height: auto;
   display: flex;

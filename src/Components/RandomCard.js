@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import '../Css/RandomCard.css'
 import logo from '../Assets/logoMtg.webp'
 
+import Card from './Card';
+
 function RandomCard() {
 
     const [card, setCard] = useState()
@@ -19,16 +21,14 @@ function RandomCard() {
         fetch(api)
         .then((res) => res.json())
         .then((data) => setCard(data.data))
-        .then(console.log(card))
     }
 
     return (  
         <div className='mainDivRandom'>
             <div>{card ?
-                <div className='cardDiv'>
-                    <img className='cardImg' src={card.image_uris.png}></img>
-                    <p>{card.name}</p> 
-                </div> 
+                <div>
+                    <Card card={card}/> 
+                </div>
                 : 'Loading...'}
             </div>
             <button onClick={getCard}>Refresh card</button>

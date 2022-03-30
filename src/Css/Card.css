@@ -1,0 +1,49 @@
+.mainDivCard {
+    display: flex;
+    flex-direction: row;
+    margin: 50px;
+    padding: 20px;
+    background-color: #434343;
+    border-radius: 25px;
+}
+
+.divInfo {
+    min-width: 35vh;
+    max-width: 55vh;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.name {
+    align-self: center;
+    justify-self: center;
+    color: #00cf77;
+}
+
+.innerInfo {
+    padding-left: 10px;
+}
+
+.buyDiv {
+    justify-self: flex-end;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.mana {
+    height: 25px;
+    width: 25px;
+    margin: 0px;
+    margin-right: 3px;
+}
+
+p {
+    color: white;
+}
+
+img {
+    max-width: 40vh;
+    height: 100%;
+    margin-right: 20px;
+}
