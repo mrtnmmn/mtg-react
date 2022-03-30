@@ -11,7 +11,9 @@ function Card(cardProp) {
     
     const card = cardProp.card
     const mana = card.mana_cost
-    const [convertedMana, setConvertedMana] = useState([black,red])
+    const [convertedMana, setConvertedMana] = useState([])
+
+    console.log(card)
 
     const [prueba, setPrueba] = useState(['hola'])
     
@@ -69,9 +71,9 @@ function Card(cardProp) {
                     <p>Artist: {card.artist}</p>
                 </div>
                 <div className='buyDiv'>
-                    {card.purchase_uris.tcgplayer && <a href={card.purchase_uris.tcgplayer}>TCGPlayer</a>}
-                    {card.purchase_uris.cardmarket && <a href={card.purchase_uris.cardkmarket}>Cardmarket</a>}
-                    {card.purchase_uris.cardhoarder && <a href={card.purchase_uris.cardhoarder}>Cardhoarder</a>}
+                    {card.purchase_uris.tcgplayer && <a href={card.purchase_uris.tcgplayer} className='buyLink'>TCGPlayer</a>}
+                    {card.purchase_uris.cardmarket && <a href={card.purchase_uris.cardmarket} className='buyLink'>Cardmarket</a>}
+                    {card.purchase_uris.cardhoarder && <a href={card.purchase_uris.cardhoarder} className='buyLink'>Cardhoarder</a>}
                 </div> 
             </div>
         </div>
