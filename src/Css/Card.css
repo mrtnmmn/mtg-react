@@ -54,6 +54,29 @@
     color: white;
 }
 
+.divCost {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+}
+
+.blankMana {
+    background-color: gray;
+    border-radius: 99999px;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2px;
+    padding: 0px;
+}
+
+.buyTitle {
+    color: #00cf77;
+}
+
 p {
     color: white;
 }

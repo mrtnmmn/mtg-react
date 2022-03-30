@@ -32,20 +32,22 @@ function Card(cardProp) {
             console.log(card.mana_cost[i+1])
             switch (mana[i+1]) {
                 case 'B':
-                    setConvertedMana(convertedMana => [...convertedMana, black])
+                    setConvertedMana(convertedMana => [...convertedMana, <img src={black} className='mana'></img>])
                     break;
                 case 'G': 
-                    setConvertedMana(convertedMana => [...convertedMana, green])
+                    setConvertedMana(convertedMana => [...convertedMana, <img src={green} className='mana'></img>])
                     break;
                 case 'U':
-                    setConvertedMana(convertedMana => [...convertedMana, blue])
+                    setConvertedMana(convertedMana => [...convertedMana, <img src={blue} className='mana'></img>])
                     break;
                 case 'R':
-                    setConvertedMana(convertedMana => [...convertedMana, red])
+                    setConvertedMana(convertedMana => [...convertedMana, <img src={red} className='mana'></img>])
                     break;
                 case 'W':
-                    setConvertedMana(convertedMana => [...convertedMana, white])
+                    setConvertedMana(convertedMana => [...convertedMana, <img src={white} className='mana'></img>])
                     break;
+                default: 
+                    setConvertedMana(convertedMana => [...convertedMana, <h3 className='blankMana'>{mana[i+1]}</h3>])
             }
         }
 
@@ -58,23 +60,29 @@ function Card(cardProp) {
             <div className='divInfo'>
                 <h2 className='name'>{card.name}</h2>
                 <div className='innerInfo'>
-                    <p>{card.type_line}</p>
+                    <p>Type: {card.type_line}</p>
                     {
                         card.type_line !== 'Land' ? 
-                        <p>Cost: 
-                            {convertedMana.map((item, index) => <img key={index} src={item} className='mana'></img>)}
-                        </p> :
+                        <div className='divCost'>
+                            <p>Cost:&nbsp; </p>
+                            {convertedMana.map((item) => item)}
+                        </div>:
                         <></>
                     }
                     {hasStats && <p>Stats: {card.power} / {card.toughness}</p>}
                     <p>Description: {card.oracle_text}</p>
                     <p>Artist: {card.artist}</p>
                 </div>
-                <div className='buyDiv'>
-                    {card.purchase_uris.tcgplayer && <a href={card.purchase_uris.tcgplayer} className='buyLink'>TCGPlayer</a>}
-                    {card.purchase_uris.cardmarket && <a href={card.purchase_uris.cardmarket} className='buyLink'>Cardmarket</a>}
-                    {card.purchase_uris.cardhoarder && <a href={card.purchase_uris.cardhoarder} className='buyLink'>Cardhoarder</a>}
-                </div> 
+                {card.purchase_uris ? 
+                <div>
+                    <h3 className='buyTitle'>Buy options: </h3>
+                    <div className='buyDiv'>
+                        {card.purchase_uris.tcgplayer && <a href={card.purchase_uris.tcgplayer} className='buyLink'>TCGPlayer</a>}
+                        {card.purchase_uris.cardmarket && <a href={card.purchase_uris.cardmarket} className='buyLink'>Cardmarket</a>}
+                        {card.purchase_uris.cardhoarder && <a href={card.purchase_uris.cardhoarder} className='buyLink'>Cardhoarder</a>}
+                    </div> 
+                </div>:
+                <p>No purchase options available</p>}
             </div>
         </div>
     );
