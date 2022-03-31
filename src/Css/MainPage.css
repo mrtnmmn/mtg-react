@@ -1,0 +1,35 @@
+.mainPageDiv {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.mtgInfo {
+    width: 50vh;
+    background-color: #333333;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+    margin-right: 5vh;
+    padding: 20px;
+    color: white;
+}
+
+.devInfo {
+    width: 20vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #333333;
+    border-radius: 15px;
+    margin-top: 10vh;
+    margin-left: 5vh;
+    padding: 20px;
+    color:white;
+}
+
+.devName {
+    color: #00cf77;
+    font-weight: bolder;
+}
