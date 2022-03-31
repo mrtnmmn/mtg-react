@@ -35,3 +35,29 @@
     width: 100%;
     flex-direction: column;
 }
+
+.divButtons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.typeButtons {
+    width: 50%;
+    height: 50px;
+    border: 2px solid #00cf77;
+    background-color: #232323;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+}
+
+.typeButtons:hover {
+    box-shadow: rgba(0, 207, 119, 0.35) 0px -30px 36px -28px inset;
+}
+
+.divResult {
+    width: 100%;
+}

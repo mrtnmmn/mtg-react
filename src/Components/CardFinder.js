@@ -10,6 +10,8 @@ function CardFinder() {
 
     const [cardName, setCardName] = useState("")
     const [card, setCard] = useState()
+    const [findByName, setFindByName] = useState(true)
+
     const api = 'https://api.scryfall.com/cards/named?fuzzy='    
 
     let handleSubmit = async (e) => {
@@ -55,14 +57,24 @@ function CardFinder() {
  
     return (  
         <div className='mainDivFinder'>
-            <form onSubmit={handleSubmit} className='divFinder'>
-                <input type="text" name="card" value={cardName} onChange={handleChange} className='finder'/>
-                <button type='submit' className='findButton'>find</button>
-            </form>
-            {card ? 
-            <div><Card card={card}/> </div>
-            : <></>
+            <div className='divButtons'>
+                <button className='typeButtons' onClick={() => setFindByName(true)}>Find by name</button>
+                <button className='typeButtons' onClick={() => setFindByName(false)}>Other</button>
+            </div>
+            {findByName ? 
+            <div className='divResult'>
+                <form onSubmit={handleSubmit} className='divFinder'>
+                    <input type="text" name="card" value={cardName} onChange={handleChange} className='finder'/>
+                    <button type='submit' className='findButton'>find</button>
+                </form>
+                {card ? 
+                <div><Card card={card}/> </div>
+                : <></>
+                }
+            </div> : 
+            'other'
             }
+
         </div>
     );
 }
