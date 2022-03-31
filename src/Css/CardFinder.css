@@ -52,6 +52,7 @@
     align-items: center;
     justify-content: center;
     font-weight: 900;
+    transition: all 1s;
 }
 
 .typeButtons:hover {
@@ -60,4 +61,9 @@
 
 .divResult {
     width: 100%;
+}
+
+.divSelector {
+    background-color: #434343;
+    
 }

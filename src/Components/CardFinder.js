@@ -72,7 +72,9 @@ function CardFinder() {
                 : <></>
                 }
             </div> : 
-            'other'
+            <div className='divResult'>
+
+            </div>
             }
 
         </div>
