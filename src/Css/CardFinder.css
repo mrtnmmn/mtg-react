@@ -1,6 +1,6 @@
 .finder {
     border-radius: 9999px;
-    width: 40%;
+    width: 75vh;
     margin-right: 20px;
     height: 30px;
     padding-left: 10px;
@@ -60,7 +60,7 @@
 }
 
 .divResult {
-    width: 100%;
+    width: 100vh;
 }
 
 .divSelector {
