@@ -1,0 +1,61 @@
+.mainDivAutocomplete {
+    width: 100%;
+    margin: 0px;
+}
+
+.mainAutocompleteResultDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.listDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #434343;
+    border-radius: 25px;
+    width: 25%;
+    height: fit-content;
+    padding: 20px;
+    color: white;
+    list-style: none;
+}
+
+.cardDiv{
+    display: flex;
+    background-color: #434343;
+    border-radius: 25px;
+}
+
+.divFinder {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 50px;
+}
+
+.finder {
+    border-radius: 9999px;
+    width: 75vh;
+    margin-right: 20px;
+    height: 30px;
+    padding-left: 10px;
+    border: none;
+}
+
+.findButton {
+    background-color: #00cf77;
+    border: #00cf77;
+    border-radius: 9999px;
+    height: 30px;
+    width: 60px;
+    color: white;
+    font-weight: bolder;
+}

@@ -49,7 +49,7 @@ function Card(cardProp) {
 
     return (  
         <div className="mainDivCard">
-            {card.image_uris ? <img src={card.image_uris.png}></img> : 'no image disponible' }
+            {card.image_uris ? <img src={card.image_uris.png} className="cardImg"></img> : 'no image disponible' }
             <div className='divInfo'>
                 <h2 className='name'>{card.name}</h2>
                 <div className='innerInfo'>

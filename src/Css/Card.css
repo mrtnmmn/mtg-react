@@ -1,10 +1,12 @@
 .mainDivCard {
     display: flex;
     flex-direction: row;
-    margin: 50px;
+    /*margin: 50px;*/
     padding: 20px;
     background-color: #434343;
     border-radius: 25px;
+    min-width: 60%;
+    height: fit-content;
 }
 
 .divInfo {
@@ -81,8 +83,11 @@ p {
     color: white;
 }
 
-img {
+.cardImg {
     max-width: 40vh;
     height: 100%;
     margin-right: 20px;
+    min-height: 400px;
+    min-width: 282px;
 }
+

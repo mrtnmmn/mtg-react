@@ -43,16 +43,22 @@
 }
 
 .typeButtons {
+    margin: 20px;
     width: 50%;
     height: 50px;
     border: 2px solid #00cf77;
-    background-color: #232323;
+    border-radius: 25px;
+    background-color: #434343;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 900;
     transition: all 1s;
+}
+
+.typeButtons:disabled {
+    box-shadow: rgba(0, 207, 119, 0.35) 0px -30px 36px -28px inset;
 }
 
 .typeButtons:hover {
@@ -65,5 +71,9 @@
 
 .divSelector {
     background-color: #434343;
+    
+}
+
+.loadingImage {
     
 }

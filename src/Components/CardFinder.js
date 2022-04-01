@@ -2,6 +2,7 @@ import { useState } from 'react';
 import '../Css/CardFinder.css'
 
 import Card from './Card.js'
+import Autocomplete from './Autocomplete';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { famagnifyingglass } from '@fortawesome/free-solid-svg-icons'
@@ -47,6 +48,7 @@ function CardFinder() {
         fetch(api + name)
         .then((res) => res.json())
         .then((data) => setCard(data))
+        .catch(console.log('nombre no valido'))
 
     }
 
@@ -58,23 +60,26 @@ function CardFinder() {
     return (  
         <div className='mainDivFinder'>
             <div className='divButtons'>
-                <button className='typeButtons' onClick={() => setFindByName(true)}>Find by name</button>
-                <button className='typeButtons' onClick={() => setFindByName(false)}>Other</button>
+                <button className='typeButtons' onClick={() => setFindByName(true)} disabled={findByName}>Find by name</button>
+                <button className='typeButtons' onClick={() => setFindByName(false)} disabled={!findByName}>Other</button>
             </div>
             {findByName ? 
-            <div className='divResult'>
-                <form onSubmit={handleSubmit} className='divFinder'>
-                    <input type="text" name="card" value={cardName} onChange={handleChange} className='finder'/>
-                    <button type='submit' className='findButton'>find</button>
-                </form>
-                {card ? 
-                <div><Card card={card}/> </div>
-                : <></>
-                }
-            </div> : 
-            <div className='divResult'>
-
-            </div>
+                /*
+                <div className='divResult'>
+                    <form onSubmit={handleSubmit} className='divFinder'>
+                        <input type="text" name="card" value={cardName} onChange={handleChange} className='finder'/>
+                        <button type='submit' className='findButton'>find</button>
+                    </form>
+                    {card ? 
+                    <div><Card card={card}/> </div>
+                    : <></>
+                    }
+                </div> */
+                <Autocomplete/>
+                : 
+                <div className='divResult'>
+                    
+                </div>
             }
 
         </div>
