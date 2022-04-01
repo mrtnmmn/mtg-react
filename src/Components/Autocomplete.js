@@ -60,6 +60,7 @@ function Autocomplete() {
         .then((res) => res.json())
         .then((data) => setCardNames(data.data))
         .then(() => {if(cardNames.length === 1) {fetchApiCard(cardNames[0])}})
+        .catch(console.log('too many cards'))
 
     }
 
