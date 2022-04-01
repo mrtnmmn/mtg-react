@@ -24,7 +24,9 @@
 .cardContainer {
     min-width: 60%;
     margin: 50px;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
