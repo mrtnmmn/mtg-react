@@ -15,6 +15,11 @@ function NavBar() {
         }
     })
 
+    function deleteToken() {
+        localStorage.removeItem('token')
+        setToken(null)
+    }
+
     return (  
         <div className="mainDivNav">
             <div className='innerDiv'>
@@ -24,8 +29,8 @@ function NavBar() {
                 <Link to="/decks" className='links'>Decks</Link>
             </div>
             <div className='innerDiv'>
-                {token? 
-                <a onClick={() => setToken(null)}>Log off</a> :
+                {localStorage.token? 
+                <a onClick={deleteToken}>Log off</a> :
                 <div>
                     <Link to="/login" className='links'>Login</Link>
                 </div>

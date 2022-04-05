@@ -23,26 +23,28 @@ function Card(cardProp) {
 
     useEffect(() => {
         setConvertedMana([])
-        for (let i = 0; i < mana.length; i = i + 3) {
-            console.log(card.mana_cost[i+1])
-            switch (mana[i+1]) {
-                case 'B':
-                    setConvertedMana(convertedMana => [...convertedMana, <img src={black} className='mana'></img>])
-                    break;
-                case 'G': 
-                    setConvertedMana(convertedMana => [...convertedMana, <img src={green} className='mana'></img>])
-                    break;
-                case 'U':
-                    setConvertedMana(convertedMana => [...convertedMana, <img src={blue} className='mana'></img>])
-                    break;
-                case 'R':
-                    setConvertedMana(convertedMana => [...convertedMana, <img src={red} className='mana'></img>])
-                    break;
-                case 'W':
-                    setConvertedMana(convertedMana => [...convertedMana, <img src={white} className='mana'></img>])
-                    break;
-                default: 
-                    setConvertedMana(convertedMana => [...convertedMana, <h3 className='blankMana'>{mana[i+1]}</h3>])
+        if (mana) {
+            for (let i = 0; i < mana.length; i = i + 3) {
+                console.log(card.mana_cost[i+1])
+                switch (mana[i+1]) {
+                    case 'B':
+                        setConvertedMana(convertedMana => [...convertedMana, <img src={black} className='mana'></img>])
+                        break;
+                    case 'G': 
+                        setConvertedMana(convertedMana => [...convertedMana, <img src={green} className='mana'></img>])
+                        break;
+                    case 'U':
+                        setConvertedMana(convertedMana => [...convertedMana, <img src={blue} className='mana'></img>])
+                        break;
+                    case 'R':
+                        setConvertedMana(convertedMana => [...convertedMana, <img src={red} className='mana'></img>])
+                        break;
+                    case 'W':
+                        setConvertedMana(convertedMana => [...convertedMana, <img src={white} className='mana'></img>])
+                        break;
+                    default: 
+                        setConvertedMana(convertedMana => [...convertedMana, <h3 className='blankMana'>{mana[i+1]}</h3>])
+                }
             }
         }
     } ,[cardProp.card])
