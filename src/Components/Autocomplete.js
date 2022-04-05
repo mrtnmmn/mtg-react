@@ -11,7 +11,7 @@ function Autocomplete() {
     const [cardName, setCardName] = useState("")
 
     const apiAutocomplete = 'https://api.scryfall.com/cards/autocomplete?q='   
-    const apiFindByName = 'https://api.scryfall.com/cards/named?fuzzy='    
+    const apiFindByName = 'https://api.scryfall.com/cards/named?fuzzy='
      
     useEffect(() => {
         console.log('cambio')

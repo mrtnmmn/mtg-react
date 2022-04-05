@@ -30,7 +30,8 @@ function RandomCard() {
 
     return (  
         <div className='mainDivRandom'>
-            <div className='cardContainer'>{card ?
+            <div className='cardContainer'>
+                {card ?
                     <Card card={card}/> 
                 : <img src={logo} className='loadingImage'></img>
             }
