@@ -27,7 +27,6 @@ function NavBar() {
                 {token? 
                 <a onClick={() => setToken(null)}>Log off</a> :
                 <div>
-                    <a onClick={() => setToken("shdcsdhj")}>LOGIN</a>
                     <Link to="/login" className='links'>Login</Link>
                 </div>
                 }

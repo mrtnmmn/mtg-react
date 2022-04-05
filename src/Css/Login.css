@@ -1,0 +1,57 @@
+.mainLoginDiv {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 30vh;
+}
+
+.loginFormDiv {
+    background-color: #535353;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 2%
+}
+
+.loginFormButton {
+    align-self: end;
+    padding: 5px 10px 5px 10px;
+    border: 2px solid #00cf77;
+    border-radius: 10px;
+    background-color: transparent;
+    transition: 200ms;
+    font-size: large;
+    color: white;
+}
+
+.linkRegister {
+    font-size: small;
+    margin-right: 1vh;
+}
+
+.linkRegister:hover {
+    color: aquamarine;
+}
+
+.loginFormButton:hover {
+    background-color: #00cf77;
+}
+
+.alreadyLogged {
+    color: #00cf77;
+}
+
+label {
+    color: #00cf77;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+input {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 25px;
+}

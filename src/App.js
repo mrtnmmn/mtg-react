@@ -6,6 +6,7 @@ import CardFinder from './Components/CardFinder';
 import {Route, Routes} from "react-router-dom";
 import MainPage from './Components/MainPages';
 import Decks from './Components/Decks';
+import Login from './Components/Login';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/random' element = {<RandomCard/>}/>
         <Route path='/finder' element = {<CardFinder/>}/>
         <Route path='/decks' element = {<Decks/>}/>
+        <Route path='/login' element = {<Login/>}/>
       </Routes>
     </div>
   );
