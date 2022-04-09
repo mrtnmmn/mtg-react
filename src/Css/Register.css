@@ -1,0 +1,37 @@
+.mainRegisterDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 25vh;
+}
+
+.registerForm {
+    background-color: #535353;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 2%
+}
+
+.linkLogin {
+    font-size: small;
+    margin-right: 1vh;
+}
+
+.linkLogin:hover {
+    color: aquamarine;
+}
+
+label {
+    color: #00cf77;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+input {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 25px;
+}

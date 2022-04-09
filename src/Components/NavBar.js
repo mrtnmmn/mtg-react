@@ -32,6 +32,7 @@ function NavBar() {
                 {localStorage.token? 
                 <a onClick={deleteToken}>Log off</a> :
                 <div>
+                    <Link to="/register" className='links'>Register</Link>
                     <Link to="/login" className='links'>Login</Link>
                 </div>
                 }

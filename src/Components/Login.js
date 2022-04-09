@@ -34,7 +34,7 @@ function Login() {
 
     function fetchLogin() {
         fetch("http://localhost:5300/users/login", {
-            method: 'POST', // or 'PUT'
+            method: 'POST', 
             body: JSON.stringify({email, password}), // data can be `string` or {object}!
             headers:{
                 'Content-Type': 'application/json'
