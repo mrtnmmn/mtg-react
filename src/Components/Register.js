@@ -13,7 +13,7 @@ function Register() {
 
     function fetchRegister() {
 
-        fetch("http://localhost:5300/users/register", {
+        fetch("http://localhost:5300/user/register", {
             method: 'POST', 
             body: JSON.stringify({username, email, password}), // data can be `string` or {object}!
             headers:{

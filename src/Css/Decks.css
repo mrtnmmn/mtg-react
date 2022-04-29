@@ -1,0 +1,20 @@
+.unsignedDiv {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logInTitle {
+    color: #00cf77;
+    margin-top: 50px;
+}
+
+.deckDivInDecksList {
+    background-color: #434343;
+    border-radius: 25px;
+    color: white;
+    margin: 20px;
+    padding: 30px;
+}

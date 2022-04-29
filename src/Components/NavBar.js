@@ -8,7 +8,10 @@ function NavBar() {
     const [token, setToken] = useState()
 
     useEffect(() => {
-        let temporalTkn = localStorage.getItem('token')
+
+
+
+        let temporalTkn = sessionStorage.getItem('token')
 
         if (temporalTkn) {
             setToken(temporalTkn)
@@ -16,7 +19,7 @@ function NavBar() {
     })
 
     function deleteToken() {
-        localStorage.removeItem('token')
+        sessionStorage.removeItem('token')
         setToken(null)
     }
 
@@ -29,7 +32,7 @@ function NavBar() {
                 <Link to="/decks" className='links'>Decks</Link>
             </div>
             <div className='innerDiv'>
-                {localStorage.token? 
+                {sessionStorage.token? 
                 <a onClick={deleteToken}>Log off</a> :
                 <div>
                     <Link to="/register" className='links'>Register</Link>

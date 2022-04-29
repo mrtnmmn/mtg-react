@@ -11,14 +11,14 @@ function Login() {
     const [response, setResponse] = useState({})
 
     useEffect(() => {
-        if(localStorage.getItem('token')) {
+        if(sessionStorage.getItem('token')) {
             setLogged(true)
         }
     })
 
     useEffect(() => {
         if (response.token) {
-            localStorage.setItem('token', response.token)
+            sessionStorage.setItem('token', response.token)
         }
     }, [response])
 
@@ -33,7 +33,7 @@ function Login() {
     }
 
     function fetchLogin() {
-        fetch("http://localhost:5300/users/login", {
+        fetch("http://localhost:5300/user/login", {
             method: 'POST', 
             body: JSON.stringify({email, password}), // data can be `string` or {object}!
             headers:{

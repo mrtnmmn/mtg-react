@@ -2,7 +2,7 @@ import { useState } from 'react';
 import '../Css/CardFinder.css'
 
 import Card from './Card.js'
-import Autocomplete from './Autocomplete';
+import AutocompleteFinder from './AutocompleteFinder';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { famagnifyingglass } from '@fortawesome/free-solid-svg-icons'
@@ -75,7 +75,7 @@ function CardFinder() {
                     : <></>
                     }
                 </div> */
-                <Autocomplete/>
+                <AutocompleteFinder/>
                 : 
                 <div className='divResult'>
                     

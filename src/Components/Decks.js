@@ -1,33 +1,50 @@
 import { useEffect, useState } from "react";
+import '../Css/Decks.css'
 
 function Decks() {
 
     const [logged, setLogged] = useState(false)
-    const [decks, setDecks] = useState([])
+    const [decks, setDecks] = useState(['name0'])
     const [res, setRes] = useState()
 
     useEffect(() => {
-        setLogged(true)
+
+        if(sessionStorage.getItem('token')) {
+            console.log('token')
+            setLogged(true)
+        }
+
         fetchApi()
-    })
+        setDecks([...decks, 'Name1'])
+        setDecks([...decks, 'Name2'])
+
+        console.log(decks)
+    }, [])
 
     function fetchApi() {
 
-        fetch('http://localhost:8080/test01/prueba')
-        .then((res) => res.json())
-        .then((data) => setRes(data.data))
 
     }
+
 
     return (  
         
         <div>
             {logged? 
                 <div>
+                    Logged
+
+                    {decks.map((name) => 
+                        <div className="deckDivInDecksList" key={name}>
+                            {name} 
+                        </div>
+                    )}
                     {res}
                 </div>
                 :
-                <div>To create decks, log in</div>
+                <div className="unsignedDiv">
+                    <h1 className="logInTitle">To create decks, log in</h1>
+                </div>
             }
         </div>
     );
