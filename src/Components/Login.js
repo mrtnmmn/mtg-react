@@ -27,6 +27,7 @@ function Login() {
         e.preventDefault();
         
         fetchLogin()
+        sessionStorage.setItem('email', email)
         setEmail("")
         setPassword("")
 

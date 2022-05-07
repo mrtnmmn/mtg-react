@@ -15,8 +15,7 @@ function Decks() {
         }
 
         fetchApi()
-        setDecks([...decks, 'Name1'])
-        setDecks([...decks, 'Name2'])
+        setDecks([...decks, 'Name1', 'Name2'])
 
         console.log(decks)
     }, [])

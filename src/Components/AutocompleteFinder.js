@@ -85,6 +85,7 @@ function AutocompleteFinder() {
                     id="combo-box-demo"
                     options={cardNames}
                     //sx={{  }}
+                    //sx={{background: white}}
                     className='finder'
                     name="card"
                     value={cardName}
