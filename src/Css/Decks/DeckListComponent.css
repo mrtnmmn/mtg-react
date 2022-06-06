@@ -1,0 +1,24 @@
+.mainDeckListComponentDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #434343;
+    border-radius: 25px;
+    color: #00cf77;
+    margin: 20px;
+    padding: 30px;
+}
+
+.deckName {
+    font-weight: 1000;
+    font-size: x-large;
+}
+
+.cardName {
+    font-size: medium;
+}
+
+.titleCards {
+    margin-top: 2rem;
+}

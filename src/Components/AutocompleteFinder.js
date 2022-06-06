@@ -6,11 +6,12 @@ import '../Css/Autocomplete.css'
 import Card from './Card.js'
 import { borderRadius } from '@mui/system';
 
-function AutocompleteFinder() {
+function AutocompleteFinder(props) {
 
     const [cardNames, setCardNames] = useState([])
     const [card, setCard] = useState()
     const [cardName, setCardName] = useState("")
+    const setCardDeckCreator = props.setCard
 
     const apiAutocomplete = 'https://api.scryfall.com/cards/autocomplete?q='   
     const apiFindByName = 'https://api.scryfall.com/cards/named?fuzzy='
@@ -20,6 +21,12 @@ function AutocompleteFinder() {
             fetchApiCard(cardNames[0])
         }
     }, [cardNames])
+
+    useEffect(() => {
+        if(props.setCard) {
+            setCardDeckCreator(card)
+        }
+    }, [card])
 
     let handleSubmit = async (e) => {
 
@@ -93,6 +100,7 @@ function AutocompleteFinder() {
                     //onChange={() => (console.log("change"))}
                     renderInput={(params) => <TextField {...params} label="Insert card names" />}
                 />
+                <button onClick={() => fetchApiCard(cardName)}>find</button>
             </div>
 
             <div className="mainAutocompleteResultDiv">

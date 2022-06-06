@@ -92,3 +92,14 @@ p {
     min-width: 282px;
 }
 
+@media (width < 800px) {
+    .mainDivCard {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        background-color: #434343;
+        border-radius: 25px;
+        min-width: 60%;
+        height: fit-content;
+    }
+}

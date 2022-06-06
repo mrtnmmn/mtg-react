@@ -2,13 +2,17 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import '../Css/Login.css'
+import useLogin from './Hooks/useLogin'
 
-function Login() {
+function Login(props) {
 
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
     const [logged, setLogged] = useState()
     const [response, setResponse] = useState({})
+
+    const setTrue = props.setTrue
+    const login = props.login
 
     useEffect(() => {
         if(sessionStorage.getItem('token')) {
@@ -19,6 +23,7 @@ function Login() {
     useEffect(() => {
         if (response.token) {
             sessionStorage.setItem('token', response.token)
+            getUserId()
         }
     }, [response])
 
@@ -42,8 +47,21 @@ function Login() {
             }
         }).then(res => res.json())
         .catch(error => console.error('Error:', error))
-        .then(response => setResponse(response));
+        .then(response => setTrue(response.token))
+        .then(getUserId());
 
+    }
+
+    function getUserId() {
+        fetch("http://localhost:5300/user/findByEmail", {
+            method: 'POST', 
+            body: JSON.stringify({email: sessionStorage.getItem('email')}), // data can be `string` or {object}!
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        }).then(res => res.json())
+        .catch(error => console.error('Error:', error))
+        .then(response => sessionStorage.setItem('userId', response.data._id));
     }
 
     let handleChange = (e) => {
@@ -54,21 +72,24 @@ function Login() {
 
     return (  
         <div className="mainLoginDiv">
-            <form onSubmit={handleSubmit} className="loginFormDiv">
-                <label>Email: </label>
-                <br></br>
-                <input type="text" value={email} name="email" onChange={handleChange}></input>
-                <br></br>
-                <label>Password: </label>
-                <br></br>
-                <input type="password" value={password} name="password" onChange={handleChange}></input>
-                <br></br>
-                <div>
-                    <Link to="/register" className="linkRegister">Don't have an account?</Link>
-                    <button type='submit' className="loginFormButton">LogIn</button>
-                </div>
-            </form>
-            {logged && <h1 className="alreadyLogged">Already logged!</h1>}
+            {!login ? 
+                <form onSubmit={handleSubmit} className="loginFormDiv">
+                    <label>Email: </label>
+                    <br></br>
+                    <input type="text" value={email} name="email" onChange={handleChange}></input>
+                    <br></br>
+                    <label>Password: </label>
+                    <br></br>
+                    <input type="password" value={password} name="password" onChange={handleChange}></input>
+                    <br></br>
+                    <div>
+                        <Link to="/register" className="linkRegister">Don't have an account?</Link>
+                        <button type='submit' className="loginFormButton">LogIn</button>
+                    </div>
+                </form>
+            :
+                <h1 className="alreadyLogged">Already logged!</h1>
+            }
         </div>
     );
 }

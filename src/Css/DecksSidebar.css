@@ -1,0 +1,76 @@
+.newDeckButton {
+    background-color: transparent;
+    border-color: #00cf77;
+    color: #00cf77;
+    width: 100%;
+    font-weight: bolder;
+    padding: 10px;
+    border-radius: 15px;
+    transition: 500ms;
+}
+
+.newDeckButton:hover {
+    background-color: #00cf77;
+    color: white;
+}
+
+.editDeckButton {
+    background-color: transparent;
+    border-color: #0061cf;
+    color: #00c3ff;
+    width: 100%;
+    font-weight: bolder;
+    padding: 10px;
+    border-radius: 15px;
+    transition: 500ms;
+}
+
+.editDeckButton:hover {
+    background-color: #0061cf;
+    color: white;
+}
+
+.deleteDeckButton {
+    background-color: transparent;
+    border-color: #ff0000;
+    color: #ff0000;
+    width: 100%;
+    font-weight: bolder;
+    padding: 10px;
+    border-radius: 15px;
+    transition: 500ms;
+}
+
+.deleteDeckButton:hover {
+    background-color: #ff0000;
+    color: white;
+}
+
+.selectedDeckDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.selectedDeckDiv > * {
+    margin-top: 15px;
+}
+
+.mainDivContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.linkToCreator {
+    width: 100%;
+}
+
+.titles {
+    color: #00cf77;
+    margin-bottom: 0px;
+    margin-top: 2rem;
+}

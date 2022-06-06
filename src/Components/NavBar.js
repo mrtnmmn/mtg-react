@@ -3,14 +3,16 @@ import logo from '../Assets/logoMtg.webp'
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-function NavBar() {
+import useLogin from './Hooks/useLogin'
+
+function NavBar(props) {
 
     const [token, setToken] = useState()
+    const [prueba, setPrueba] = useState()
+    const login = props.login
+    const setFalse = props.setFalse
 
     useEffect(() => {
-
-
-
         let temporalTkn = sessionStorage.getItem('token')
 
         if (temporalTkn) {
@@ -32,8 +34,8 @@ function NavBar() {
                 <Link to="/decks" className='links'>Decks</Link>
             </div>
             <div className='innerDiv'>
-                {sessionStorage.token? 
-                <a onClick={deleteToken}>Log off</a> :
+                {login? 
+                <a onClick={setFalse}>Log off</a> :
                 <div>
                     <Link to="/register" className='links'>Register</Link>
                     <Link to="/login" className='links'>Login</Link>
