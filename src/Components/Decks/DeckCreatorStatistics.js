@@ -18,10 +18,10 @@ function DeckCreatorStatistics(props) {
                 {chartType === 'lands' ? <ColorsChart colors={props.lands}/> : <></>}
             </div>
             <div className='deckCreatorStatisticsSelector'>
-                <button className="deckCreatorStatisticsButton" onClick={() => {setChartType('colors')}}>Card Color</button>
-                <button className="deckCreatorStatisticsButton" onClick={() => {setChartType('mana')}}>Mana Cost</button>
-                <button className="deckCreatorStatisticsButton" onClick={() => {setChartType('type')}}>Type</button>
-                <button className="deckCreatorStatisticsButton" onClick={() => {setChartType('lands')}}>Lands</button>
+                <button className={chartType !== 'colors' ? "deckCreatorStatisticsButton" : "deckCreatorStatisticsButtonSelected"}  onClick={() => {setChartType('colors')}}>Card Color</button>
+                <button className={chartType !== 'mana' ? "deckCreatorStatisticsButton" : "deckCreatorStatisticsButtonSelected"} onClick={() => {setChartType('mana')}}>Mana Cost</button>
+                <button className={chartType !== 'type' ? "deckCreatorStatisticsButton" : "deckCreatorStatisticsButtonSelected"} onClick={() => {setChartType('type')}}>Type</button>
+                <button className={chartType !== 'lands' ? "deckCreatorStatisticsButton" : "deckCreatorStatisticsButtonSelected"} onClick={() => {setChartType('lands')}}>Lands</button>
             </div>
         </div>
     );

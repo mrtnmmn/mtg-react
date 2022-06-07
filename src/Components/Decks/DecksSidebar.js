@@ -1,6 +1,9 @@
 import '../../Css/DecksSidebar.css'
 import ColorsChart from '../Charts/ColorsChart'
 import ManaCostsChart from '../Charts/ManaCostsCharts'
+import { MenuItem, FormControl, InputLabel, Select } from '@mui/material';
+import { useState } from "react";
+import DeckCreatorStatistics from "./DeckCreatorStatistics";
 
 function DecksSidebar(props) {
 
@@ -8,6 +11,8 @@ function DecksSidebar(props) {
     const setSelectedDeck = props.setSelectedDeck
     const creating = props.creating
     const setCreating = props.setCreating
+
+    const [selectedChart, setSelectedChart] = useState('cardColors')
 
     function enterNew() {
         setSelectedDeck({})
@@ -26,10 +31,7 @@ function DecksSidebar(props) {
                     <button className='editDeckButton' onClick={enterEdit}>Edit Deck</button>
                     <button className='deleteDeckButton'>Delete Deck</button>
                     <h1 className='titles'>{selectedDeck.deckName}</h1>
-                    {selectedDeck.cardColors? <h3 className='titles'>Card Colors</h3> : <></>}
-                    <ColorsChart colors={selectedDeck.cardColors}/>
-                    {selectedDeck.cardCosts? <h3 className='titles'>Card costs</h3> : <></>}
-                    <ManaCostsChart cardCosts={selectedDeck.cardCosts}/>
+                    <DeckCreatorStatistics colors={selectedDeck.cardColors} cardCosts={selectedDeck.cardCosts} types={selectedDeck.cardTypes} lands={selectedDeck.landsColors}/>
                 </div>:
                 <></>
             }
