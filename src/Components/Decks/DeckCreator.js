@@ -9,8 +9,8 @@ import { width } from "@mui/system";
 
 function DeckCreator(props) {
 
-    const [deckName, setDeckName] = useState()
-    const [deckLegality, setDeckLegality] = useState()
+    const [deckName, setDeckName] = useState("")
+    //const [deckLegality, setDeckLegality] = useState()
     const [currentCard, setCurrentCard] = useState()
     const [currentCardLegality, setCurrentCardLegality] = useState()
     const [cards, setCards] = useState([])
@@ -47,6 +47,10 @@ function DeckCreator(props) {
         }
     }, [])
 
+    useEffect(() => {
+        generateDeck()
+    },[cards])
+
     function generateDeck() {
         setDeck({
             deckName: deckName,
@@ -56,7 +60,7 @@ function DeckCreator(props) {
             cardColors: cardColors,
             cardTypes: cardTypes,
             landsColors: landsColors,
-            deckLegality: deckLegality
+            //deckLegality: deckLegality
         })
     }
 
@@ -67,22 +71,19 @@ function DeckCreator(props) {
     let handleChange = (e) => {
         const { name, value } = e.target;
         if (name === "deckName") setDeckName(value);
-        if (name === 'legality') setDeckLegality(value)
+        //if (name === 'legality') setDeckLegality(value)
+        generateDeck()
     }
 
     const addCard = () => {
 
         let newCardType = currentCard.type_line
         newCardType = newCardType.split('—')[0]
-        console.log(newCardType)
         if ( newCardType.split(' ')[0] === 'Legendary') {
-            console.log(newCardType)
             newCardType = newCardType.split(' ')[1]
         } else {
             newCardType = newCardType.split(' ')[0]
         }
-
-        console.log(newCardType)
 
         switch (newCardType) {
             case ('Basic'):
@@ -397,21 +398,9 @@ function DeckCreator(props) {
         .then(response => console.log(response))
     }
 
-    function getLegality() {
-        switch (deckLegality) {
-            case 'standard':
-                setCurrentCardLegality(currentCard.legalities.standard)
-                break
-            case 'commander':
-                setCurrentCardLegality(currentCard.legalities.commander)
-                break
-            case 'legacy':
-                setCurrentCardLegality(currentCard.legalities.legacy)
-                break
-            case 'pauper': 
-                setCurrentCardLegality(currentCard.legalities.pauper)
-                break
-        }
+    function  log() {
+        generateDeck() 
+        console.log(deck)
     }
 
     return (  
@@ -421,21 +410,6 @@ function DeckCreator(props) {
                     <form onSubmit={handleSubmit}>
                         <input type="text" value={deckName} name="deckName" onChange={handleChange} className='inputName'></input>
                     </form>
-                    <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-                        <InputLabel id="legalityLabel">Legality</InputLabel>
-                        <Select
-                            labelId="deckLegality"
-                            id="deckLegality"
-                            value={deckLegality}
-                            onChange={handleChange}
-                            label="legality"
-                            name="legality">
-                            <MenuItem value={'standard'}>Standard</MenuItem>
-                            <MenuItem value={'commander'}>Commander</MenuItem>
-                            <MenuItem value={'legacy'}>Leacy</MenuItem>
-                            <MenuItem value={'pauper'}>Pauper</MenuItem>
-                        </Select>
-                    </FormControl>
                 </div>            
                 {cards.length !== 0? 
                     <div className="cardListDiv">
