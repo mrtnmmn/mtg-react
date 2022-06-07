@@ -87,20 +87,24 @@ function AutocompleteFinder(props) {
     return (  
         <div className='mainDivAutocomplete'>
             <div className='divFinder'>
-                <Autocomplete
-                    disablePortal
-                    id="combo-box-demo"
-                    options={cardNames}
-                    //sx={{  }}
-                    //sx={{background: white}}
-                    className='finder'
-                    name="card"
-                    value={cardName}
-                    onInputChange={handleInputChange}
-                    //onChange={() => (console.log("change"))}
-                    renderInput={(params) => <TextField {...params} label="Insert card names" />}
-                />
-                <button onClick={() => fetchApiCard(cardName)}>find</button>
+                <div className='autocompleteAndFind'>
+                    <div className='autocompleteDiv'>
+                        <Autocomplete
+                            disablePortal
+                            id="combo-box-demo"
+                            options={cardNames}
+                            //sx={{  }}
+                            //sx={{background: '#ffffff'}}
+                            className='finder'
+                            name="card"
+                            value={cardName}
+                            onInputChange={handleInputChange}
+                            //onChange={() => (console.log("change"))}
+                            renderInput={(params) => <TextField {...params} label="" />}
+                        />
+                    </div>
+                    <button onClick={() => fetchApiCard(cardName)} className="findButton">find</button>
+                </div>
             </div>
 
             <div className="mainAutocompleteResultDiv">

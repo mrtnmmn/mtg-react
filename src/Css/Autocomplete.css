@@ -51,12 +51,44 @@
 }
 
 .findButton {
-    background-color: #00cf77;
-    border: #00cf77;
+    background-color: transparent;
+    border: 1px solid #00cf77;
     border-radius: 9999px;
     height: 30px;
     width: 60px;
-    color: white;
+    color: #00cf77;
     font-weight: bolder;
     justify-self: center;
+    margin-right: 10px;
+    transition: 400ms;
+}
+
+.findButton:hover {
+    background-color: #00cf77;
+    border: #00cf77;
+    color: #ffffff
+}
+
+.autocompleteAndFind {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 6rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.autocompleteDiv {
+    height: 56px;
+    margin-left: 0px;
+    width: auto;
+}
+
+.autocompleteDiv .css-wb57ya-MuiFormControl-root-MuiTextField-root {
+    background-color: #ffffff;
+}
+
+.autocompleteDiv .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root {
+    border-radius: 0px;
 }
