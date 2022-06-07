@@ -386,7 +386,6 @@ function DeckCreator(props) {
     }
 
     function saveDeck() {
-        generateDeck()
         fetch("http://localhost:5300/deck/", {
             method: 'POST', 
             body: JSON.stringify(deck), // data can be `string` or {object}!
@@ -396,11 +395,6 @@ function DeckCreator(props) {
         }).then(res => res.json())
         .catch(error => console.error('Error:', error))
         .then(response => console.log(response))
-    }
-
-    function  log() {
-        generateDeck() 
-        console.log(deck)
     }
 
     return (  
