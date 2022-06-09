@@ -17,6 +17,7 @@ function Login(props) {
     useEffect(() => {
         if(sessionStorage.getItem('token')) {
             setLogged(true)
+            getUserId()
         }
     })
 
