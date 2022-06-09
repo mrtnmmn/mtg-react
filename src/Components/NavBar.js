@@ -8,7 +8,6 @@ import useLogin from './Hooks/useLogin'
 function NavBar(props) {
 
     const [token, setToken] = useState()
-    const [prueba, setPrueba] = useState()
     const login = props.login
     const setFalse = props.setFalse
 
@@ -29,6 +28,7 @@ function NavBar(props) {
         <div className="mainDivNav">
             <div className='innerDiv'>
                 <a href='https://magic.wizards.com/es' className='links'><img src={logo} className='logo'></img></a>
+                <Link to="/" className='links'>Home</Link>
                 <Link to="/random" className='links'>Random Card</Link> 
                 <Link to="/finder" className='links'>Card Finder</Link> 
                 <Link to="/decks" className='links'>Decks</Link>

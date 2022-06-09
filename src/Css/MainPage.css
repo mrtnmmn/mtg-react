@@ -1,35 +1,101 @@
 .mainPageDiv {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+}
+
+.contentDiv {
+    display: flex;
+    align-items: flex-start;
     flex-direction: row;
     justify-content: center;
+    width: 96%;
+    padding: 2%;
 }
 
 .mtgInfo {
-    width: 50vh;
+    width: 50%;
     background-color: #333333;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    margin-top: 10vh;
-    margin-right: 5vh;
+    align-content: center;
+    margin-right: 5%;
     padding: 20px;
-    color: white;
+    color: #00cf77;
+    justify-content: center;
 }
 
-.devInfo {
-    width: 20vh;
+.contactInfo {
+    width: 20%;
     display: flex;
     flex-direction: column;
     background-color: #333333;
     border-radius: 15px;
-    margin-top: 10vh;
     margin-left: 5vh;
     padding: 20px;
     color:white;
+    padding-left: 3rem;
+    padding-bottom: 2rem;
 }
 
-.devName {
+.contactInfoTitles {
     color: #00cf77;
     font-weight: bolder;
 }
+
+.contactInfoText {
+    color: #ffffff;
+    padding-left: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.title {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.mainText {
+    margin-top: 1.5rem;
+    padding-left: 1rem;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}   
+
+.bannerDiv {
+    width: 100%;
+    height: 30%;
+}
+
+.banner {
+    width: 100%;
+    z-index: 1;
+}
+
+.bodyText {
+    font-size: large;
+    font-weight: bolder;
+}
+
+.decksLink {
+    margin: 1rem;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    transition: 200ms;
+}
+
+.decksLinkDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 4rem;
+}
+
+.decksLink:hover {
+    color: #56ffb6;
+    font-size: 2rem;
+}
+
