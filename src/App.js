@@ -22,7 +22,7 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/random" element={<RandomCard />} />
         <Route path="/finder" element={<CardFinder />} />
-        <Route path="/decks" element={<Decks />} />
+        <Route path="/decks" element={<Decks login={login} />} />
         <Route
           path="/login"
           element={<Login login={login} setTrue={setTrue} setAdminTrue={setAdminTrue} />}

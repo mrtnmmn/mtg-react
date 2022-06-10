@@ -5,11 +5,8 @@ import DeckCreator from "./DeckCreator";
 import DeckListComponent from "./DeckListComponent";
 import DecksSidebar from "./DecksSidebar";
 
-function Decks() {
+function Decks(props) {
 
-    const getDecksEndpoint = 'https://'
-
-    const [logged, setLogged] = useState(false)
     const [decksIds, setDecksIds] = useState([])
     const [decks, setDecks] = useState([])
     const [selectedDeck, setSelectedDeck] = useState({})
@@ -17,14 +14,11 @@ function Decks() {
     const [mainMenu, setMainMenu] = useState(true)
     const [res, setRes] = useState()
 
+    const login = props.login
+
     useEffect(() => {
 
-        if(sessionStorage.getItem('token')) {
-            console.log('token')
-            setLogged(true)
-        }
-
-        fetchApi()
+        fetchUserDecks()
     }, [])
 
     useEffect(() => {
@@ -51,7 +45,9 @@ function Decks() {
         });
     }
 
-    function fetchApi() {
+    function fetchUserDecks() {
+
+        console.log('fetching')
 
         fetch("http://localhost:5300/deck/getByUser", {
             method: 'POST', 
@@ -80,24 +76,36 @@ function Decks() {
 
     }
 
+    function deletedOne(id) {
+        let newDecks = decks.filter((deck) => {
+            return (deck._id !== id)
+        })
+
+        setDecks([...newDecks])
+
+    }
+
 
     return (  
         
         <div>
-            {logged? 
+            {login? 
                 <div>
                     {mainMenu?
                     <div className="loggedMainDiv">
                         <div className="decksListDiv">
-                            {decks.map((deck) => 
-                                <DeckListComponent deck={deck} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} key={deck._id}/>
+                            {decks.map((deck) => {
+                                    if (deck._id){ 
+                                        return <DeckListComponent deck={deck} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} key={deck._id}/>
+                                    }
+                                }
                                 //<div className="deckDivInDecksList" key={deck._id} onClick={() => setSelectedDeck(deck)}>
                                 //    {deck.deckName} 
                                 //</div>
                             )}
                         </div>
                         <div className="decksSidebar">
-                            <DecksSidebar deck={selectedDeck} setSelectedDeck={setSelectedDeck} setCreating={setCreating}/>
+                            <DecksSidebar deck={selectedDeck} setSelectedDeck={setSelectedDeck} setCreating={setCreating} deletedOne={deletedOne}/>
                         </div>
                     </div>
                     :<></>

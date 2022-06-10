@@ -4,7 +4,8 @@ import { Autocomplete, TextField } from '@mui/material';
 import '../Css/Autocomplete.css'
 
 import Card from './Card.js'
-import { borderRadius } from '@mui/system';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
 function AutocompleteFinder(props) {
 
@@ -103,7 +104,9 @@ function AutocompleteFinder(props) {
                             renderInput={(params) => <TextField {...params} label="" />}
                         />
                     </div>
-                    <button onClick={() => fetchApiCard(cardName)} className="findButton">find</button>
+                    <button onClick={() => {if(cardName !== "") {fetchApiCard(cardName)}}} className="findButton">
+                        <FontAwesomeIcon icon={faMagnifyingGlass} />
+                    </button>
                 </div>
             </div>
 

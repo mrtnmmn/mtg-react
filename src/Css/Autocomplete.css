@@ -28,6 +28,7 @@
     display: flex;
     background-color: #434343;
     border-radius: 25px;
+    overflow: hidden;
 }
 
 .divFinder {
@@ -54,8 +55,8 @@
     background-color: transparent;
     border: 1px solid #00cf77;
     border-radius: 9999px;
-    height: 30px;
-    width: 60px;
+    height: 45px;
+    width: 45px;
     color: #00cf77;
     font-weight: bolder;
     justify-self: center;
@@ -77,6 +78,8 @@
     height: 6rem;
     padding-left: 2rem;
     padding-right: 2rem;
+    background-color: #434343;
+    border-radius: 1rem;
 }
 
 .autocompleteDiv {

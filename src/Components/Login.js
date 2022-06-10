@@ -45,8 +45,9 @@ function Login(props) {
 
         e.preventDefault();
         
-        fetchLogin()
         sessionStorage.setItem('email', email)
+
+        fetchLogin()
         setEmail("")
         setPassword("")
 
@@ -62,6 +63,7 @@ function Login(props) {
         }).then(res => res.json())
         .catch(error => console.error('Error:', error))
         .then(response => setTrue(response.token))
+        .then(console.log('login'))
         .then(getUser());
 
     }

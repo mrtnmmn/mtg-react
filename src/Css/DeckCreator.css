@@ -159,4 +159,15 @@
     font-size: large;
     margin-top: 1rem;
     color: #00cf77;
+    transition: 200ms;
+}
+
+.saveButton:hover {
+    color: #ffffff;
+    background-color: #00cf77;
+}
+
+.saveButton:focus {
+    color: #00cf77;
+    background-color: #ffffff;
 }

@@ -68,6 +68,13 @@ function Card(cardProp) {
                     <p>Description: {card.oracle_text}</p>
                     <p>Artist: {card.artist}</p>
                 </div>
+
+            </div>
+        </div>
+    );
+}
+
+/*
                 {card.purchase_uris ? 
                 <div>
                     <h3 className='buyTitle'>Buy options: </h3>
@@ -78,9 +85,6 @@ function Card(cardProp) {
                     </div> 
                 </div>:
                 <p>No purchase options available</p>}
-            </div>
-        </div>
-    );
-}
+*/
 
 export default Card;

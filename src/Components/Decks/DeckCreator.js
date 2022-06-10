@@ -35,6 +35,7 @@ function DeckCreator(props) {
         multicolor: 0
     })
     const [deck, setDeck] = useState(props.deck)
+    const [editing, setEditing] = useState(false)
 
     useEffect(() => {
         if (props.deck._id) {
@@ -44,6 +45,7 @@ function DeckCreator(props) {
             setCardColors(deck.cardColors)
             setCardTypes(deck.cardTypes)
             setLandsColors(deck.landsColors)
+            setEditing(true)
         }
     }, [])
 
@@ -388,7 +390,7 @@ function DeckCreator(props) {
     function saveDeck() {
         fetch("http://localhost:5300/deck/", {
             method: 'POST', 
-            body: JSON.stringify(deck), // data can be `string` or {object}!
+            body: JSON.stringify({deck, editing}), // data can be `string` or {object}!
             headers:{
                 'Content-Type': 'application/json'
             }
@@ -433,7 +435,7 @@ function DeckCreator(props) {
                     </div>
                 : <></>
                 }
-                <button className="saveButton" onClick={() => saveDeck()}>Save</button>
+                <button className="saveButton" onClick={() => {console.log(deck); saveDeck()}} hidden={cards.length === 0}>Save</button>
             </div>
             <div className="cardFinderDiv">
                 {currentCard? 

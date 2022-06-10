@@ -8,6 +8,8 @@ function useLogin() {
     const setFalse = () => {
         setLogin(false)
         sessionStorage.removeItem('token')
+        sessionStorage.removeItem('email')
+        sessionStorage.removeItem('userId')
     }
 
     const setTrue = (token) => {
@@ -22,12 +24,6 @@ function useLogin() {
     const setAdminTrue = () => {
         setAdmin(true)
     }
-
-    useEffect(() => {
-
-        console.log(admin)
-
-    }, [admin])
 
     useEffect(() => {
     

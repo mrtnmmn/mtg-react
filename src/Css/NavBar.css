@@ -43,3 +43,7 @@ a:visited {
     display: flex;
     flex-direction: row;
 }
+
+.colored {
+    color: #00cf77;
+}

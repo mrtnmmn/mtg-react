@@ -2,6 +2,8 @@ import '../Css/NavBar.css'
 import logo from '../Assets/logoMtg.webp'
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
 import useLogin from './Hooks/useLogin'
 
@@ -42,7 +44,11 @@ function NavBar(props) {
                         {admin? 
                             <Link to="/" className='links'>Admin</Link>
                         :
-                            <></>
+                            <div>
+                                <Link to="/" className='links'>
+                                    <FontAwesomeIcon icon={faCartShopping} className='colored'/>
+                                </Link>
+                            </div>
                         }
                         </div>
                         <a onClick={() => {setFalse(); setAdminFalse()}} className='links' >Log off</a>
