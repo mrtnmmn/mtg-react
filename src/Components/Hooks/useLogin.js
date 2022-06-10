@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 function useLogin() {
 
     const [login, setLogin] = useState()
+    const [admin, setAdmin] = useState(false)
 
     const setFalse = () => {
         setLogin(false)
@@ -14,16 +15,34 @@ function useLogin() {
         sessionStorage.setItem('token', token)
     }
 
+    const setAdminFalse = () => {
+        setAdmin(false)
+    }
+
+    const setAdminTrue = () => {
+        setAdmin(true)
+    }
+
+    useEffect(() => {
+
+        console.log(admin)
+
+    }, [admin])
+
     useEffect(() => {
     
         if (sessionStorage.getItem('token')) {
             setLogin(true)
         }
+
+        if (sessionStorage.getItem('token')) {
+            setAdmin(true)
+        }
     
     }, [])
     
 
-    return [login, setFalse, setTrue]
+    return [login, admin, setFalse, setTrue, setAdminFalse, setAdminTrue]
 }
 
 export default useLogin;

@@ -10,6 +10,8 @@ function NavBar(props) {
     const [token, setToken] = useState()
     const login = props.login
     const setFalse = props.setFalse
+    const setAdminFalse = props.setAdminFalse
+    const admin = props.admin
 
     useEffect(() => {
         let temporalTkn = sessionStorage.getItem('token')
@@ -35,11 +37,21 @@ function NavBar(props) {
             </div>
             <div className='innerDiv'>
                 {login? 
-                <a onClick={setFalse}>Log off</a> :
-                <div>
-                    <Link to="/register" className='links'>Register</Link>
-                    <Link to="/login" className='links'>Login</Link>
-                </div>
+                    <div className='logged'>
+                        <div>
+                        {admin? 
+                            <Link to="/" className='links'>Admin</Link>
+                        :
+                            <></>
+                        }
+                        </div>
+                        <a onClick={() => {setFalse(); setAdminFalse()}} className='links' >Log off</a>
+                    </div>
+                    :
+                    <div>
+                        <Link to="/register" className='links'>Register</Link>
+                        <Link to="/login" className='links'>Login</Link>
+                    </div>
                 }
             </div>
         </div>

@@ -15,7 +15,7 @@ function Register() {
 
         fetch("http://localhost:5300/user/register", {
             method: 'POST', 
-            body: JSON.stringify({username, email, password}), // data can be `string` or {object}!
+            body: JSON.stringify({username, email, password, admin: false}), // data can be `string` or {object}!
             headers:{
                 'Content-Type': 'application/json'
             }
@@ -28,7 +28,7 @@ function Register() {
 
     let handleSubmit = async (e) => {
 
-        e.prevetDefault()
+        e.preventDefault()
 
         fetchRegister()
         setUsername("")

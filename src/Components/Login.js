@@ -10,23 +10,36 @@ function Login(props) {
     const [password, setPassword] = useState()
     const [logged, setLogged] = useState()
     const [response, setResponse] = useState({})
+    const [user, setUser] = useState({})
 
     const setTrue = props.setTrue
     const login = props.login
+    const setAdminTrue = props.setAdminTrue
 
     useEffect(() => {
         if(sessionStorage.getItem('token')) {
             setLogged(true)
-            getUserId()
         }
     })
 
     useEffect(() => {
         if (response.token) {
             sessionStorage.setItem('token', response.token)
-            getUserId()
         }
     }, [response])
+
+    useEffect(() => {
+
+        if (user.admin) {
+            console.log('is admin: ' + user.admin)
+            setAdminTrue()
+        }
+
+        if (user.userId) {
+            sessionStorage.setItem('userId', user.userId)
+        }
+
+    }, [user])
 
     let handleSubmit = async (e) => {
 
@@ -49,12 +62,13 @@ function Login(props) {
         }).then(res => res.json())
         .catch(error => console.error('Error:', error))
         .then(response => setTrue(response.token))
-        .then(getUserId());
+        .then(getUser());
 
     }
 
-    function getUserId() {
-        fetch("http://localhost:5300/user/findByEmail", {
+    function getUser() {
+        console.log('getting user')
+        fetch("http://localhost:5300/user/", {
             method: 'POST', 
             body: JSON.stringify({email: sessionStorage.getItem('email')}), // data can be `string` or {object}!
             headers:{
@@ -62,7 +76,7 @@ function Login(props) {
             }
         }).then(res => res.json())
         .catch(error => console.error('Error:', error))
-        .then(response => sessionStorage.setItem('userId', response.data._id));
+        .then(response => setUser(response.user))
     }
 
     let handleChange = (e) => {
