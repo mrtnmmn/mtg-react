@@ -20,5 +20,25 @@
 }
 
 .titleCards {
-    margin-top: 2rem;
+    margin-top: 0px;
+    margin-bottom: 0.6rem;
+}
+
+.deckInfoDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+
+}
+
+.deckInfoDiv > div {
+    margin-right: 1rem;
+}
+
+.price {
+    color: #ffffff;
+    font-weight: 800;
+    font-size: medium;
+    margin-bottom: 3px;
 }

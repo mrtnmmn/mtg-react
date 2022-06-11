@@ -46,6 +46,25 @@
     color: white;
 }
 
+.shopingCartButton {
+    background-color: transparent;
+    border-color: #ff8800;
+    color: #ff8800;
+    width: 100%;
+    font-weight: bolder;
+    padding: 10px;
+    border-radius: 15px;
+    transition: 500ms;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.shopingCartButton:hover {
+    background-color: #ff8800;
+    color: #ffffff;
+}
+
 .selectedDeckDiv {
     width: 100%;
     display: flex;

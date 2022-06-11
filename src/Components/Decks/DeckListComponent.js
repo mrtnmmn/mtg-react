@@ -13,8 +13,9 @@ function DeckListComponent(props) {
         <div>
             {selectedDeck._id === deck._id || !selectDeck ? (
                 <div className="mainDeckListComponentDiv">
-                    <div className="deckTitleDiv">
-                        <span className="deckName">{deck.deckName}</span>
+                    <div className="deckInfoDiv">
+                        <div className="deckName">{deck.deckName}</div>
+                        {deck.deckPrice && <div className="price">Price: {deck.deckPrice}€</div>}
                     </div>
                     {deck.cards ? (
                         <div>

@@ -15,6 +15,7 @@ function Decks(props) {
     const [res, setRes] = useState()
 
     const login = props.login
+    const addDeck = props.addDeck
 
     useEffect(() => {
 
@@ -105,7 +106,7 @@ function Decks(props) {
                             )}
                         </div>
                         <div className="decksSidebar">
-                            <DecksSidebar deck={selectedDeck} setSelectedDeck={setSelectedDeck} setCreating={setCreating} deletedOne={deletedOne}/>
+                            <DecksSidebar deck={selectedDeck} setSelectedDeck={setSelectedDeck} setCreating={setCreating} deletedOne={deletedOne} addDeck={addDeck}/>
                         </div>
                     </div>
                     :<></>

@@ -157,9 +157,9 @@
     padding: 0.5rem;
     font-weight: bolder;
     font-size: large;
-    margin-top: 1rem;
     color: #00cf77;
     transition: 200ms;
+    margin-left: 1.5rem;
 }
 
 .saveButton:hover {
@@ -170,4 +170,19 @@
 .saveButton:focus {
     color: #00cf77;
     background-color: #ffffff;
+}
+
+.priceAndSaveButton {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.price {
+    color: #ffffff;
+    font-size: x-large;
+    font-weight: 800;
 }

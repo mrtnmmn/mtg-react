@@ -45,7 +45,8 @@ function NavBar(props) {
                             <Link to="/" className='links'>Admin</Link>
                         :
                             <div>
-                                <Link to="/" className='links'>
+                                <Link to="shoppingCart" className='links'>
+                                    Cart&nbsp;
                                     <FontAwesomeIcon icon={faCartShopping} className='colored'/>
                                 </Link>
                             </div>

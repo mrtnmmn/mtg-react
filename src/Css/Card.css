@@ -81,8 +81,14 @@
     color: #00cf77;
 }
 
-p {
+.innerInfo > p  {
     color: white;
+    font-weight: 600;
+}
+
+.divCost > p  {
+    color: white;
+    font-weight: 600;
 }
 
 .cardImg {

@@ -34,6 +34,7 @@ function DeckCreator(props) {
         black: 0,
         multicolor: 0
     })
+    const [deckPrice, setDeckPrice] = useState(parseFloat(0))
     const [deck, setDeck] = useState(props.deck)
     const [editing, setEditing] = useState(false)
 
@@ -46,6 +47,7 @@ function DeckCreator(props) {
             setCardTypes(deck.cardTypes)
             setLandsColors(deck.landsColors)
             setEditing(true)
+            setDeckPrice(deck.deckPrice)
         }
     }, [])
 
@@ -63,6 +65,7 @@ function DeckCreator(props) {
             cardTypes: cardTypes,
             landsColors: landsColors,
             //deckLegality: deckLegality
+            deckPrice: deckPrice
         })
     }
 
@@ -208,6 +211,12 @@ function DeckCreator(props) {
             }
         }
 
+        const newCardCost = parseFloat(currentCard.prices.eur)
+
+        if (currentCard.prices.eur) {
+            let auxSum = parseFloat(deckPrice) + parseFloat(newCardCost)
+            setDeckPrice(auxSum)
+        }
 
         const filter = cards.filter(card => card.cardId === currentCard.id)
 
@@ -225,7 +234,8 @@ function DeckCreator(props) {
                 },
                 cmc: currentCard.cmc,
                 cardType: newCardType,
-                color: newCardColor
+                color: newCardColor,
+                cardPrice: newCardCost
             }
 
             setCards([...cards, newCard])
@@ -372,6 +382,8 @@ function DeckCreator(props) {
             }
         }
 
+        setDeckPrice(deckPrice - deleteCard.cardPrice)
+
         let actualizedCards = cards.map((card) => {
             if (card.cardId === deleteCardId) {
                 if (card.cardQuantity !== 1) {
@@ -435,7 +447,10 @@ function DeckCreator(props) {
                     </div>
                 : <></>
                 }
-                <button className="saveButton" onClick={() => {console.log(deck); saveDeck()}} hidden={cards.length === 0}>Save</button>
+                <div className="priceAndSaveButton" >
+                    <div className="price" hidden={cards.length === 0}>Price: {(deckPrice).toFixed(2)}€</div>
+                    <button className="saveButton" onClick={() => {console.log(deck); saveDeck()}} hidden={cards.length === 0}>Save</button>
+                </div>
             </div>
             <div className="cardFinderDiv">
                 {currentCard? 
@@ -451,6 +466,9 @@ function DeckCreator(props) {
 }
 
 /*
+
+code for deck legalities
+
                     <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
                         <InputLabel id="legalityLabel">Legality</InputLabel>
                         <Select

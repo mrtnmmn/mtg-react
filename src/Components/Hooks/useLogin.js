@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 function useLogin() {
 
     const [login, setLogin] = useState()
-    const [admin, setAdmin] = useState(false)
+    const [admin, setAdmin] = useState()
 
     const setFalse = () => {
         setLogin(false)
@@ -32,7 +32,6 @@ function useLogin() {
         }
 
         if (sessionStorage.getItem('token')) {
-            setAdmin(true)
         }
     
     }, [])

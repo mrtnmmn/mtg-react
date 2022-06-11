@@ -4,10 +4,12 @@ import logo from '../Assets/logoMtg.webp'
 
 import Card from './Card';
 
-function RandomCard() {
+function RandomCard(props) {
 
     const [card, setCard] = useState()
     const [loadedImg, setLoadedImg] = useState(false)
+
+    const addCard = props.addCard
 
     const api = 'https://api.scryfall.com/cards/random'
 
@@ -36,7 +38,12 @@ function RandomCard() {
                 : <img src={logo} className='loadingImage'></img>
             }
             </div>
-            {card && <button onClick={getCard} className='refreshButton'>Refresh card</button>}
+            {card && 
+                <div>
+                    <button onClick={getCard} className='refreshButton'>Refresh card</button>
+                    <button onClick={() => {addCard(card)}} className='refreshButton'>Add to cart</button>
+                </div>
+            }
         </div>
     );
 }
