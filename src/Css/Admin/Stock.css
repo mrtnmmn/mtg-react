@@ -1,0 +1,121 @@
+.stockMainDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 4rem;
+}
+
+.filtersDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    width: 18%;
+    background-color: #434343;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+ 
+.filtersDiv > div { 
+    display: flex;
+    justify-content: center;
+}
+
+.filtersDiv > div > label{ 
+    margin-right: 1rem;
+}
+
+.filtersDiv > h1 {
+    color: #00cf77;
+    text-align: center;
+    margin-top: 0px;
+}
+
+.cardsDiv {
+    width: 65%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #434343;
+    border-radius: 1rem;
+}
+
+.individualCard {
+    width: 96%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    padding: 2px;
+    transition: 200ms;
+    border-radius: 1rem;
+    padding-left: 1rem;
+}
+
+.individualCard:hover {
+    background-color: #646464;
+}
+
+.cardInfo {
+    display: flex;
+    flex-direction: row;    
+    height: 100%;
+    color: #00cf77; 
+    width:  80%;
+}
+
+.cardInfo > div {
+    margin-right: 2rem;
+}
+
+.filtersButtonsDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.filtersButtonsDiv > button {
+    margin-top: 0.5rem;
+}
+
+.cardButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 20%;
+}
+
+.cardButtons > button {
+    margin-left: 1rem;
+    padding: 0.2rem;
+}
+
+.cardName {
+    font-weight: 1000;
+    width: 60%;
+}
+
+.cardQuantity {
+    width: 20%;
+    color: #ffffff;
+}
+
+.cardPrice {
+    width: 20%;
+    color: #ffffff;
+}
+
+.zeroMatches {
+    color: #00cf77;
+    font-weight: 1000;
+    font-size: x-large;
+}
+
+.displayCards {
+    width: 100%;
+}

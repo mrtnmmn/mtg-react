@@ -48,8 +48,6 @@ function Decks(props) {
 
     function fetchUserDecks() {
 
-        console.log('fetching')
-
         fetch("http://localhost:5300/deck/getByUser", {
             method: 'POST', 
             body: JSON.stringify({_id: sessionStorage.getItem("userId")}), // data can be `string` or {object}!

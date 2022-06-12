@@ -1,0 +1,38 @@
+.customButton {
+    background-color: transparent;
+    width: 100%;
+    font-weight: bolder;
+    padding: 10px;
+    border-radius: 1rem;
+    transition: 500ms;
+}
+
+.green {
+    border: 1px solid #00cf77;
+    color: #00cf77;
+}
+
+.green:hover {
+    color: #ffffff;
+    background-color: #00cf77;
+}
+
+.red {
+    border: 1px solid #ff0000;
+    color: #ff0000;
+}
+
+.red:hover {
+    color: #000000;
+    background-color: #ff0000;
+}
+
+.blue {
+    border: 1px solid #0061cf;
+    color: #ffffff;
+}
+
+.blue:hover {
+    color: #ffffff;
+    background-color: #0061cf;
+}

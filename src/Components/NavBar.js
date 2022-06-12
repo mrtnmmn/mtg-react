@@ -42,10 +42,12 @@ function NavBar(props) {
                     <div className='logged'>
                         <div>
                         {admin? 
-                            <Link to="/" className='links'>Admin</Link>
+                            <div>
+                                <Link to="/stock" className='links'>Stock</Link>
+                            </div>
                         :
                             <div>
-                                <Link to="shoppingCart" className='links'>
+                                <Link to="/shoppingCart" className='links'>
                                     Cart&nbsp;
                                     <FontAwesomeIcon icon={faCartShopping} className='colored'/>
                                 </Link>

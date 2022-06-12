@@ -10,6 +10,7 @@ import Login from "./Components/Login"
 import Register from "./Components/Register"
 import DeckCreator from "./Components/Decks/DeckCreator"
 import ShopingCart from "./Components/ShoppingCart/ShopingCart"
+import Stock from "./Components/Admin/Stock"
 
 import useLogin from "./Components/Hooks/useLogin"
 import useShoppingList from "./Components/Hooks/useShoppingList"
@@ -30,6 +31,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/deckCreator" element={<DeckCreator />} />
         <Route path="/shoppingCart" element={<ShopingCart decks={decks} cards={cards} deleteDeck={deleteDeck} deleteCard={deleteCard} />} /> 
+        <Route path="/stock" element={<Stock/>} />
       </Routes>
     </div>
   )
