@@ -44,6 +44,7 @@ function NavBar(props) {
                         {admin? 
                             <div>
                                 <Link to="/stock" className='links'>Stock</Link>
+                                <Link to="/purchaseOrders" className='links'>Purchase Orders</Link>
                             </div>
                         :
                             <div>

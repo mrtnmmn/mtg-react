@@ -1,0 +1,4 @@
+.mainPurchaseOrders {
+    display: flex;
+    flex-direction: column;
+}
