@@ -50,6 +50,13 @@ function PurchaseOrders() {
         if (order && order.cardIds) {
             if (order.cardIds.length !== 0) {
                 for (const card of order.cardIds) {
+                    fetch("https://api.scryfall.com/cards/" + card)
+                    .then((res) => res.json())
+                    //.then((response) => console.log(response))
+                    .then((response) => setSelectedItemCards([...selectedItemCards, response]))
+                    .then(console.log(selectedItemCards))
+
+                    /*
                     fetch("http://localhost:5300/card/getOneFromId", {
                         method: 'post', 
                         body: JSON.stringify({_id: card}), 
@@ -59,6 +66,7 @@ function PurchaseOrders() {
                     }).then(res => res.json())
                     .catch(error => console.error('Error:', error))
                     .then(response => setSelectedItemCards([...selectedItemCards, response.data]))
+                    */
                 }
             }
         }
@@ -119,7 +127,7 @@ function PurchaseOrders() {
             <div className='purchasesList'>
                 {purchaseOrders.map((order) => {
                     return (
-                        <div key={order._id} onClick={() => {divClicked(order)}}>
+                        <div key={order._id} onClick={() => {divClicked(order); console.log(order)}}>
                             Purchase Id: {order._id}
                         </div>
 
@@ -157,8 +165,8 @@ function PurchaseOrders() {
                                 <div className='selectedItemDecks'>
                                     <div className='sectionTitle'>Cards: </div>
                                     {selectedItemCards.map((card) => {
-                                        return <div className='selectedItemCardList' onClick={() => {selectCard(card.cardName)}}>
-                                            <div>{card.cardName}</div>
+                                        return <div className='selectedItemCardList' onClick={() => {selectCard(card.name)}}>
+                                            <div>{card.name}</div>
                                         </div>
                                     })}
                                 </div>

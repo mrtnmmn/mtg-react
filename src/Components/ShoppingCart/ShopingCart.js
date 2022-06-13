@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import '../../Css/ShoppingCart/ShopingCart.css'
+import CustomButton from '../CustomButton'
 
 function ShopingCart(props) {
 
@@ -13,6 +14,7 @@ function ShopingCart(props) {
     const [totalDecksPrice, setTotalDecksPrice] = useState(0)
     const [totalCardsPrice, setTotalCardsPrice] = useState(0)
     const [totalPrice, setTotalPrice] = useState(0)
+    const [generatedPurchaseOrder, setGeneratedPurchaseOrder] = useState({}) 
 
     useEffect(() => {
         console.log(decks)
@@ -58,6 +60,41 @@ function ShopingCart(props) {
 
         setTotalDecksPrice(auxPriceDeck)
     }
+
+    function generatePurchaseOrder() {
+
+        const deckIds = decks.map(deck => {
+            return deck._id
+        });
+
+        const cardIds = cards.map((card) => {
+            return card.id
+        })
+
+        setGeneratedPurchaseOrder({
+            deckIds: deckIds,
+            cardIds: cardIds,
+            userId: sessionStorage.getItem('userId') 
+        })
+    }
+
+    function submitPurchaseOrder() {
+        console.log(generatedPurchaseOrder)
+        fetch("http://localhost:5300/purchaseOrders/", {
+            method: 'post', 
+            body: JSON.stringify({order: generatedPurchaseOrder}), 
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        }).then(res => res.json())
+        .catch(error => console.error('Error:', error))
+        .then(response => console.log(response.data))
+
+    }
+
+    useEffect(() => {
+        generatePurchaseOrder()
+    }, [])
 
     return (  
         <div className="mainShoppingCartDiv">
@@ -110,7 +147,9 @@ function ShopingCart(props) {
                     
                     <div className='purchaseButtonContainer'>
                         <div className='grandTotal'>Grand total: {totalPrice}€</div>
-                        <button onClick={() => {console.log(parseFloat(totalDecksPrice) + totalCardsPrice.toFixed(2))}} className='purchaseButton'>Purchase</button>
+                        <div className='divPurchaseCustomButton'>
+                            <CustomButton text={"Purchase"} class={"green"} buttonFunction={submitPurchaseOrder}/>
+                        </div>
                     </div>
 
                 </div>
