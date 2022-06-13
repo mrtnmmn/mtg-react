@@ -24,7 +24,7 @@ function MainPage() {
                 <div className="contactInfo">
                     <h1 className='contactInfoTitles'>Contact with us!</h1>
                     <p className='contactInfoText'>Email: magikaTG@gmail.com</p>
-                    <p className='contactInfoText'>RRSS: @magikaTG</p>
+                    <p className='contactInfoText'>Socials: @magikaTG</p>
                 </div>
             </div>
         </div>
