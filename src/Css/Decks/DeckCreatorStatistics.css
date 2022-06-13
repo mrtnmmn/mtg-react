@@ -19,6 +19,10 @@
     justify-content: space-between;
 }
 
+.deckCreatorStatisticsSelector > button {
+    overflow: hidden;
+}
+
 .deckCreatorStatisticsButton {
     background-color: transparent;
     width: 100%;

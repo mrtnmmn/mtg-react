@@ -41,3 +41,24 @@
     padding: 30px;
     width: 25%;
 }
+
+@media (width < 750px) {
+    .loggedMainDiv {
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .decksListDiv {
+        width: 100%;
+    }
+
+    .decksListDiv > {
+        overflow: hidden;
+    }
+
+    .decksSidebar {
+        width: 70%;
+        margin: 0px;
+    }
+}

@@ -185,3 +185,25 @@
     font-size: x-large;
     font-weight: 800;
 }
+
+@media (width < 900px) {
+    .mainDeckCreatorDiv {
+        flex-direction: column;
+        align-items: center;
+    }
+    .mainCreationDiv {
+        width: 90%;
+        margin: 0px;
+        margin-top: 1rem;
+    }
+
+    .cardFinderDiv {
+        width: 90%;
+        margin: 0px;
+        margin-top: 1rem;
+    }
+    
+    .inputName {
+        width: 50%;
+    }
+}
