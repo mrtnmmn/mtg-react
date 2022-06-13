@@ -55,7 +55,9 @@ function NavBar(props) {
                             </div>
                         }
                         </div>
-                        <a onClick={() => {setFalse(); setAdminFalse()}} className='links' >Log off</a>
+                        <Link to="/">
+                            <a onClick={() => {setFalse(); setAdminFalse()}} className='links' >Log off</a>
+                        </Link>
                     </div>
                     :
                     <div>
