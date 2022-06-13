@@ -56,7 +56,7 @@ function NavBar(props) {
                         }
                         </div>
                         <Link to="/">
-                            <a onClick={() => {setFalse(); setAdminFalse()}} className='links' >Log off</a>
+                            <div onClick={() => {setFalse(); setAdminFalse(); sessionStorage.removeItem('admin'); props.deleteAll()}} className='links' >Log off</div>
                         </Link>
                     </div>
                     :

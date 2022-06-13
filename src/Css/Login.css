@@ -43,6 +43,12 @@
     color: #00cf77;
 }
 
+.loginError {
+    font-weight: 700;
+    font-size: small;
+    color: #f00404;
+}
+
 label {
     color: #00cf77;
     font-size: x-large;

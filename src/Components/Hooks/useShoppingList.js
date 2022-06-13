@@ -35,11 +35,16 @@ function useShoppingList() {
         
     }
 
+    const deleteAll = () => {
+        setCards([])
+        setDecks([])
+    }
+
     useEffect(() => {
         console.log(decks)
     }, [decks])
 
-    return [decks, cards, addDeck, deleteDeck, addCard, deleteCard]
+    return [decks, cards, addDeck, deleteDeck, addCard, deleteCard, deleteAll]
 }
 
 export default useShoppingList;

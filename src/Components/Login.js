@@ -11,6 +11,7 @@ function Login(props) {
     const [logged, setLogged] = useState()
     const [response, setResponse] = useState({})
     const [user, setUser] = useState({})
+    const [loginError, setLoginError] = useState(false)
 
     const setTrue = props.setTrue
     const login = props.login
@@ -31,7 +32,7 @@ function Login(props) {
     useEffect(() => {
 
         if (user.admin) {
-            console.log('is admin: ' + user.admin)
+            sessionStorage.setItem('admin', true)
             setAdminTrue()
         }
 
@@ -62,9 +63,16 @@ function Login(props) {
             }
         }).then(res => res.json())
         .catch(error => console.error('Error:', error))
-        .then(response => setTrue(response.token))
-        .then(console.log('login'))
-        .then(getUser());
+        .then(response => {           
+            console.log(response)
+            if (response.error) {
+                setLoginError(true)
+            } else {
+                setTrue(response.token)
+                getUser()
+            }
+        })
+
 
     }
 
@@ -103,9 +111,14 @@ function Login(props) {
                         <Link to="/register" className="linkRegister">Don't have an account?</Link>
                         <button type='submit' className="loginFormButton">LogIn</button>
                     </div>
+                    {loginError && 
+                        <div className="loginError">
+                            The email / password combination is incorrect
+                        </div>
+                    }
                 </form>
             :
-                <h1 className="alreadyLogged">Already logged!</h1>
+                <h1 className="alreadyLogged"><Link to="/">Already Logged! Return to main page</Link></h1>
             }
         </div>
     );

@@ -416,6 +416,7 @@ function DeckCreator(props) {
             <div className="mainCreationDiv">    
                 <div className="titleAndLegality">
                     <form onSubmit={handleSubmit}>
+                        <label>Title: </label>
                         <input type="text" value={deckName} name="deckName" onChange={handleChange} className='inputName'></input>
                     </form>
                 </div>            

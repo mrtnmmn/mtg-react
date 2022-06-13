@@ -98,7 +98,7 @@ function Card(props) {
                         card.type_line !== 'Land' ? 
                         <div className='divCost'>
                             <p>Cost:&nbsp; </p>
-                            {convertedMana.map((item) => item)}
+                            {convertedMana.map((item) => <div key={item}>{item}</div>)}
                         </div>:
                         <></>
                     }

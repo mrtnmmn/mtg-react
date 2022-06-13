@@ -31,7 +31,8 @@ function useLogin() {
             setLogin(true)
         }
 
-        if (sessionStorage.getItem('token')) {
+        if (sessionStorage.getItem('admin')) {
+            setAdminTrue()
         }
     
     }, [])

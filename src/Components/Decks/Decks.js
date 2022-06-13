@@ -5,6 +5,8 @@ import DeckCreator from "./DeckCreator";
 import DeckListComponent from "./DeckListComponent";
 import DecksSidebar from "./DecksSidebar";
 
+import { Link } from 'react-router-dom';
+
 function Decks(props) {
 
     const [decksIds, setDecksIds] = useState([])
@@ -116,7 +118,11 @@ function Decks(props) {
                 </div>
                 :
                 <div className="unsignedDiv">
-                    <h1 className="logInTitle">To create decks, log in</h1>
+                    <h1 className="logInTitle">
+                        <Link to="/login">
+                            To create decks, log in
+                        </Link>
+                    </h1>
                 </div>
             }
         </div>

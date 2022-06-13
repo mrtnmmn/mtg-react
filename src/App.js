@@ -19,11 +19,11 @@ import "./App.css"
 
 function App() {
   const [login, isAdmin, setFalse, setTrue, setAdminFalse, setAdminTrue] = useLogin()
-  const [decks, cards, addDeck, deleteDeck, addCard, deleteCard] = useShoppingList()
+  const [decks, cards, addDeck, deleteDeck, addCard, deleteCard, deleteAll] = useShoppingList()
 
   return (
     <div className="mainDiv">
-      <NavBar login={login} admin={isAdmin} setFalse={setFalse} setAdminFalse={setAdminFalse}/>
+      <NavBar login={login} admin={isAdmin} setFalse={setFalse} setAdminFalse={setAdminFalse} deleteAll={deleteAll}/>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/random" element={<RandomCard addCard={addCard} isAdmin={isAdmin} />} />
@@ -33,8 +33,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/deckCreator" element={<DeckCreator />} />
         <Route path="/shoppingCart" element={<ShopingCart decks={decks} cards={cards} deleteDeck={deleteDeck} deleteCard={deleteCard} />} /> 
-        <Route path="/stock" element={<Stock />} />
-        <Route path="/purchaseOrders" element={<PurchaseOrders />} />
+        <Route path="/stock" element={<Stock admin={isAdmin}/>} />
+        <Route path="/purchaseOrders" element={<PurchaseOrders admin={isAdmin}/>} />
       </Routes>
     </div>
   )
