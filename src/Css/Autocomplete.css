@@ -44,7 +44,7 @@
 
 .finder {
     border-radius: 9999px;
-    width: 75vh;
+    width: 75%;
     margin-right: 20px;
     height: 30px;
     padding-left: 10px;
@@ -80,12 +80,14 @@
     padding-right: 2rem;
     background-color: #434343;
     border-radius: 1rem;
+    width: 50%;
+    margin-right: 0px;
 }
 
 .autocompleteDiv {
     height: 56px;
     margin-left: 0px;
-    width: auto;
+    width: 100%;
 }
 
 .autocompleteDiv .css-wb57ya-MuiFormControl-root-MuiTextField-root {

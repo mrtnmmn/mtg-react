@@ -66,7 +66,7 @@ function Stock() {
     }
 
     function addOne(cardId) {
-        fetch("http://localhost:5300/card/addOne", {
+        fetch("http://localhost:5300/card/", {
             method: 'post', 
             body: JSON.stringify({_id: cardId}), 
             headers:{

@@ -26,8 +26,8 @@ function App() {
       <NavBar login={login} admin={isAdmin} setFalse={setFalse} setAdminFalse={setAdminFalse}/>
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/random" element={<RandomCard addCard={addCard}/>} />
-        <Route path="/finder" element={<CardFinder addCard={addCard} />} />
+        <Route path="/random" element={<RandomCard addCard={addCard} isAdmin={isAdmin} />} />
+        <Route path="/finder" element={<CardFinder addCard={addCard} isAdmin={isAdmin}/>} />
         <Route path="/decks" element={<Decks login={login}  addDeck={addDeck} />} />
         <Route path="/login" element={<Login login={login} setTrue={setTrue} setAdminTrue={setAdminTrue} />} />
         <Route path="/register" element={<Register />} />

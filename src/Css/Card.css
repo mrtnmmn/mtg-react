@@ -99,6 +99,10 @@
     min-width: 282px;
 }
 
+.adminButtons > * {
+    margin-top: 1rem;
+}
+
 @media (width < 800px) {
     .mainDivCard {
         display: flex;

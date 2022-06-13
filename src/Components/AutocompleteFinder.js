@@ -13,6 +13,8 @@ function AutocompleteFinder(props) {
     const [card, setCard] = useState()
     const [cardName, setCardName] = useState("")
     const setCardDeckCreator = props.setCard
+    const isAdmin = props.isAdmin 
+    const addCard = props.addCard
 
     const apiAutocomplete = 'https://api.scryfall.com/cards/autocomplete?q='   
     const apiFindByName = 'https://api.scryfall.com/cards/named?fuzzy='
@@ -113,7 +115,7 @@ function AutocompleteFinder(props) {
             <div className="mainAutocompleteResultDiv">
                 {card && 
                     <div className="cardDiv">
-                        <Card card={card}/>
+                        <Card card={card} isAdmin={isAdmin} addCard={addCard}/>
                     </div>
                 }
             </div>

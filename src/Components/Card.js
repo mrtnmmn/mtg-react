@@ -6,12 +6,17 @@ import blue from '../Assets/mana/blue.png'
 import white from '../Assets/mana/white.png'
 import green from '../Assets/mana/green.png'
 import black from '../Assets/mana/black.png'
+import CustomButton from './CustomButton';
 
-function Card(cardProp) {
+function Card(props) {
     
-    const card = cardProp.card
+    const card = props.card
     const mana = card.mana_cost
     const [convertedMana, setConvertedMana] = useState([])
+
+    const isAdmin = props.isAdmin
+    const addCard = props.addCard
+
 
     console.log(card)
 
@@ -47,7 +52,40 @@ function Card(cardProp) {
                 }
             }
         }
-    } ,[cardProp.card])
+    } ,[props.card])
+
+    function addOne(card) {
+        console.log(card)
+
+        let cardPrice 
+        if (card.prices.eur !== null) {
+            cardPrice = card.prices.eur
+        } else {
+            cardPrice = 0
+        }
+
+        fetch("http://localhost:5300/card/", {
+            method: 'post', 
+            body: JSON.stringify({_id: card.id, cardQuantity: 1, cardName: card.name, cardPrice: cardPrice}), 
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        }).then(res => res.json())
+        .catch(error => console.log('Error: ', error))
+        .then(console.log('finished'))
+    }
+
+    function subtractOne(card) {
+        fetch("http://localhost:5300/card/subtractOne", {
+            method: 'post', 
+            body: JSON.stringify({_id: card.id}), 
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        }).then(res => res.json())
+        .catch(error => console.log('Error: ', error))
+        .then(response => console.log(response))
+    }
 
     return (  
         <div className="mainDivCard">
@@ -68,7 +106,14 @@ function Card(cardProp) {
                     <p>Description: {card.oracle_text}</p>
                     <p>Artist: {card.artist}</p>
                 </div>
-
+                {isAdmin ? 
+                    <div className='adminButtons'>
+                        <CustomButton text={"Add to stock"} class={"green"} buttonFunction={() => {addOne(card)}}/>
+                        <CustomButton text={"Subtract from stock"} class={"red"} buttonFunction={() => {subtractOne(card)}}/>
+                    </div>
+                :
+                    <CustomButton text={"Add to cart"} class={"green"} buttonFunction={() => {addCard(card)}}/>                        
+                }
             </div>
         </div>
     );

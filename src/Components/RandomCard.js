@@ -10,6 +10,7 @@ function RandomCard(props) {
     const [loadedImg, setLoadedImg] = useState(false)
 
     const addCard = props.addCard
+    const isAdmin = props.isAdmin
 
     const api = 'https://api.scryfall.com/cards/random'
 
@@ -34,7 +35,7 @@ function RandomCard(props) {
         <div className='mainDivRandom'>
             <div className='cardContainer'>
                 {card ?
-                    <Card card={card}/> 
+                    <Card card={card} isAdmin={isAdmin} addCard={addCard}/> 
                 : <img src={logo} className='loadingImage'></img>
             }
             </div>

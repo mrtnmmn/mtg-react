@@ -7,11 +7,14 @@ import AutocompleteFinder from './AutocompleteFinder';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { famagnifyingglass } from '@fortawesome/free-solid-svg-icons'
 
-function CardFinder() {
+function CardFinder(props) {
 
     const [cardName, setCardName] = useState("")
     const [card, setCard] = useState()
     const [findByName, setFindByName] = useState(true)
+
+    const addCard = props.addCard 
+    const isAdmin = props.isAdmin
 
     const api = 'https://api.scryfall.com/cards/named?fuzzy='    
 
@@ -59,10 +62,12 @@ function CardFinder() {
  
     return (  
         <div className='mainDivFinder'>
+            {/*
             <div className='divButtons'>
                 <button className='typeButtons' onClick={() => setFindByName(true)} disabled={findByName}>Find by name</button>
                 <button className='typeButtons' onClick={() => setFindByName(false)} disabled={!findByName}>Other</button>
             </div>
+            */}
             {findByName ? 
                 /*
                 <div className='divResult'>
@@ -75,7 +80,7 @@ function CardFinder() {
                     : <></>
                     }
                 </div> */
-                <AutocompleteFinder/>
+                <AutocompleteFinder isAdmin={isAdmin} addCard={addCard}/>
                 : 
                 <div className='divResult'>
                     
