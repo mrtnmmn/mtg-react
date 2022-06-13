@@ -47,3 +47,22 @@ a:visited {
 .colored {
     color: #00cf77;
 }
+
+@media (width < 750px) {
+    .mainDivNav {
+        overflow-x: scroll;
+    }
+
+    .mainDivNav > * {
+        text-align: center;
+        font-size: medium;
+    }
+
+    .logged > * {
+        text-align: center;
+    }
+
+    .adminZone > a {
+        text-align: center;
+    }
+}

@@ -42,9 +42,9 @@ function NavBar(props) {
                     <div className='logged'>
                         <div>
                         {admin? 
-                            <div>
+                            <div className='adminZone'>
                                 <Link to="/stock" className='links'>Stock</Link>
-                                <Link to="/purchaseOrders" className='links'>Purchase Orders</Link>
+                                <Link to="/purchaseOrders" className='links'>Orders</Link>
                             </div>
                         :
                             <div>
