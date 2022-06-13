@@ -3,6 +3,7 @@ import '../Css/RandomCard.css'
 import logo from '../Assets/logoMtg.webp'
 
 import Card from './Card';
+import CustomButton from './CustomButton';
 
 function RandomCard(props) {
 
@@ -41,8 +42,7 @@ function RandomCard(props) {
             </div>
             {card && 
                 <div>
-                    <button onClick={getCard} className='refreshButton'>Refresh card</button>
-                    <button onClick={() => {addCard(card)}} className='refreshButton'>Add to cart</button>
+                    <CustomButton text={"Get another card"} class={"green"} buttonFunction={() => {getCard()}}/>
                 </div>
             }
         </div>
