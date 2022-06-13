@@ -1,4 +1,21 @@
 .mainPurchaseOrders {
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 3rem;
+}
+
+.purchasesList {
+    display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #434343;
+    width: 60%;
+}
+
+.selectedPurchase {
+    background-color: #434343;
+    width: 30%;
+    display: flex;
 }
