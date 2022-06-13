@@ -12,10 +12,138 @@
     justify-content: flex-start;
     background-color: #434343;
     width: 60%;
+    height: fit-content;
+    border-radius: 1rem;
+    padding-bottom: 1rem;
+}
+
+.purchasesList > div {
+    margin-left: 2rem;
+    color: #00cf77;
+    font-size: larger;
+    font-weight: 1000;
+    margin-top: 1rem;
+    transition: 300ms;
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+
+.purchasesList > div:hover { 
+    background-color: #797979;
 }
 
 .selectedPurchase {
     background-color: #434343;
     width: 30%;
+    height: fit-content;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.selectedItemTitle {
+    color: #00cf77;
+    font-size: x-large;
+    font-weight: 1000;
+}
+
+.cardListDiv {
+    padding-top: 0.5rem;
+    color: #ffffff;
+    padding-bottom: 1rem;
+}
+
+.white {
+    color: #ffffff;
+}
+
+.cardListTitle {
+    font-size: larger;
+    font-weight: 600;
+}
+
+.selectedDeckCardListItem {
+width: 60%;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+color: #ffffff;
+padding-left: 1rem;
+}
+
+.allWidth {
+    width: 100%;
+}
+
+.selectedDeck {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divButton {
+    width: 90%;
+}
+
+.noSelectedOrder {
+    color: #00cf77;
+    font-size: xx-large;
+    font-weight: 1000;
+}
+
+.purchaseId {
+    color: #00cf77;
+    font-size: x-large;
+    font-weight: 800;
+}
+
+.purchaseOrderDeck {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+}
+
+.purchaseOrderDeckName {
+    color: #00cf77;
+    font-size: larger;
+    font-weight: 700;
+}
+
+.sectionTitle {
+    color: #00cf77;
+    font-size: larger;
+    font-weight: 1000;
+    margin-top: 1rem;
+}
+
+.selectedItemCardList {
+    color: #ffffff;
+    padding-left: 1rem;
+}
+
+.cardSelectedFullInfo  .mainDivCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90%;
+}
+
+.centerItems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.selectedItemDecks {
+    width: 80%;
+}
+
+.submitButtonDiv {
+    padding-top: 1rem;
+    width: 90%;
 }

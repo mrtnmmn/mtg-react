@@ -156,8 +156,8 @@ function Stock() {
                     <input type="text" value={filterPrice} name="filterPrice" onChange={handleChange} />            
                 </div>
                 <div className='filtersButtonsDiv'>
-                    <CustomButton class={"green"} text={"Apply filters"} buttonFunction={applyFilters}></CustomButton>
-                    <CustomButton class={"red"} text={"Delete Filters"} buttonFunction={() => {setDisplayCards([...cards]); setFilterName(""); setFilterPrice(0)}}></CustomButton>
+                    <CustomButton class={"green"} text={"Apply filters"} buttonFunction={applyFilters} />
+                    <CustomButton class={"red"} text={"Delete Filters"} buttonFunction={() => {setDisplayCards([...cards]); setFilterName(""); setFilterPrice(0)}} />
                 </div>
             </form>
         </div>
