@@ -106,6 +106,16 @@ function PurchaseOrders(props) {
         })
             .then((res) => res.json())
             .catch((error) => console.error("Error:", error))
+
+            let updatedPurchases = purchaseOrders.filter((order) => {
+                if (order._id !== selectedItem._id ) {
+                    return order
+                }
+            })
+
+            setPurchaseOrders([...updatedPurchases])
+            setSelectedItem({})
+
     }
 
     function checkStockItem(order) {
@@ -223,7 +233,7 @@ function PurchaseOrders(props) {
                                 )}
                                 {selectedCard.id ? (
                                     <div className="cardSelectedFullInfo">
-                                        <Card card={selectedCard}></Card>
+                                        <Card card={selectedCard} isAdmin={props.admin}></Card>
                                     </div>
                                 ) : (
                                     <></>

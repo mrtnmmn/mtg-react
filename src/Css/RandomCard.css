@@ -45,3 +45,9 @@
       transform: rotate(360deg);
     }
 }
+
+@media (width < 800px) {
+    .refreshButtonDiv {
+        margin-bottom: 1rem;
+    }
+}

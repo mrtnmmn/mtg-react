@@ -32,7 +32,7 @@ function App() {
         <Route path="/login" element={<Login login={login} setTrue={setTrue} setAdminTrue={setAdminTrue} />} />
         <Route path="/register" element={<Register />} />
         <Route path="/deckCreator" element={<DeckCreator />} />
-        <Route path="/shoppingCart" element={<ShopingCart decks={decks} cards={cards} deleteDeck={deleteDeck} deleteCard={deleteCard} />} /> 
+        <Route path="/shoppingCart" element={<ShopingCart decks={decks} cards={cards} deleteDeck={deleteDeck} deleteCard={deleteCard} deleteAll={deleteAll}/>} /> 
         <Route path="/stock" element={<Stock admin={isAdmin}/>} />
         <Route path="/purchaseOrders" element={<PurchaseOrders admin={isAdmin}/>} />
       </Routes>

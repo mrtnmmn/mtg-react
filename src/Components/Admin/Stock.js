@@ -33,7 +33,7 @@ function Stock(props) {
         let newCards = cards.filter((card) => {
             if (filterName.length !== 0) {
                 console.log(card)
-                if (card.cardName === filterName) {
+                if ((card.cardName).toLowerCase().includes(filterName.toLowerCase())) {
                     return card
                 }
             } else {

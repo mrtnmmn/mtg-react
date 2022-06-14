@@ -41,7 +41,7 @@ function RandomCard(props) {
             }
             </div>
             {card && 
-                <div>
+                <div className='refreshButtonDiv'>
                     <CustomButton text={"Get another card"} class={"green"} buttonFunction={() => {getCard()}}/>
                 </div>
             }

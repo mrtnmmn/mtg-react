@@ -28,7 +28,8 @@
     display: flex;
     background-color: #434343;
     border-radius: 25px;
-    overflow: hidden;
+    margin-bottom: 1rem;
+
 }
 
 .divFinder {

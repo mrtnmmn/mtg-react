@@ -42,6 +42,18 @@
     width: 25%;
 }
 
+.noDecksMessage {
+    display: flex;
+    flex-direction: column;
+    color: #00cf77;
+    font-size: xx-large;
+    width: 75%;
+    align-items: center;
+    justify-content: center;
+    font-weight: 1000;
+    margin-top: 2rem;
+}
+
 @media (width < 750px) {
     .loggedMainDiv {
         flex-direction: column;
@@ -60,5 +72,10 @@
     .decksSidebar {
         width: 70%;
         margin: 0px;
+    }
+
+    .noDecksMessage {
+        font-size: large;
+        margin-bottom: 1rem;
     }
 }

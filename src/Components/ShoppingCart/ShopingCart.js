@@ -8,6 +8,7 @@ function ShopingCart(props) {
     const cards = props.cards
     const deleteCard = props.deleteCard
     const deleteDeck = props.deleteDeck
+    const deleteAll = props.deleteAll
 
     const [decksLength, setDecksLength] = useState()
     const [cardsLength, setCardsLength] = useState()
@@ -15,6 +16,7 @@ function ShopingCart(props) {
     const [totalCardsPrice, setTotalCardsPrice] = useState(0)
     const [totalPrice, setTotalPrice] = useState(0)
     const [generatedPurchaseOrder, setGeneratedPurchaseOrder] = useState({}) 
+    const [purchased, setPurchased] = useState(false)
 
     useEffect(() => {
         console.log(decks)
@@ -89,6 +91,8 @@ function ShopingCart(props) {
         }).then(res => res.json())
         .catch(error => console.error('Error:', error))
         .then(response => console.log(response.data))
+        .then(deleteAll())
+        .then(setPurchased(true))
 
     }
 
@@ -99,9 +103,18 @@ function ShopingCart(props) {
     return (  
         <div className="mainShoppingCartDiv">
             { cardsLength === 0 && decksLength === 0 ? 
-                <div className="emptyCart">
-                    Wow, this is so empty! Go buy something!
+                <div>
+                    {purchased ? 
+                        <div className="emptyCart">
+                            Thaks for your purchase!
+                        </div>
+                    :
+                        <div className="emptyCart">
+                            Wow, this is so empty! Go buy something!
+                        </div>
+                    }
                 </div>
+
                 :
                 <div className='fullCart'>
                     

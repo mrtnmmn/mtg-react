@@ -94,17 +94,22 @@ function Decks(props) {
                 <div>
                     {mainMenu?
                     <div className="loggedMainDiv">
-                        <div className="decksListDiv">
-                            {decks.map((deck) => {
-                                    if (deck._id){ 
-                                        return <DeckListComponent deck={deck} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} key={deck._id}/>
+                        {decks.length !== 0 ?
+                            <div className="decksListDiv">
+                                {decks.map((deck) => {
+                                        if (deck._id){ 
+                                            return <DeckListComponent deck={deck} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} key={deck._id}/>
+                                        }
                                     }
-                                }
-                                //<div className="deckDivInDecksList" key={deck._id} onClick={() => setSelectedDeck(deck)}>
-                                //    {deck.deckName} 
-                                //</div>
-                            )}
-                        </div>
+                                    //<div className="deckDivInDecksList" key={deck._id} onClick={() => setSelectedDeck(deck)}>
+                                    //    {deck.deckName} 
+                                    //</div>
+                                )}
+                            </div>
+                        :
+                            <div className="noDecksMessage">You don't have decks</div>
+                        }
+
                         <div className="decksSidebar">
                             <DecksSidebar deck={selectedDeck} setSelectedDeck={setSelectedDeck} setCreating={setCreating} deletedOne={deletedOne} addDeck={addDeck}/>
                         </div>
