@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import '../Css/Login.css'
-import useLogin from './Hooks/useLogin'
 
 function Login(props) {
 
