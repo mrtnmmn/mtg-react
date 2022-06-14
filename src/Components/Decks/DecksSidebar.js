@@ -27,7 +27,7 @@ function DecksSidebar(props) {
 
     function deleteDeck() {
         setSelectedDeck({})
-        fetch("http://localhost:5300/deck/", {
+        fetch("https://magikatg.herokuapp.com/deck/", {
             method: 'DELETE', 
             body: JSON.stringify({_id: selectedDeck._id}), // data can be `string` or {object}!
             headers:{

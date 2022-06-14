@@ -50,7 +50,7 @@ function Decks(props) {
 
     function fetchUserDecks() {
 
-        fetch("http://localhost:5300/deck/getByUser", {
+        fetch("https://magikatg.herokuapp.com/deck/getByUser", {
             method: 'POST', 
             body: JSON.stringify({_id: sessionStorage.getItem("userId")}), // data can be `string` or {object}!
             headers:{
@@ -65,7 +65,7 @@ function Decks(props) {
 
     function fetchDeck(deckId) {
 
-        fetch("http://localhost:5300/deck/getOneFromId", {
+        fetch("https://magikatg.herokuapp.com/deck/getOneFromId", {
             method: 'POST', 
             body: JSON.stringify({_id: deckId}), // data can be `string` or {object}!
             headers:{

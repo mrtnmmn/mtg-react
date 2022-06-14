@@ -55,7 +55,7 @@ function Login(props) {
     }
 
     function fetchLogin() {
-        fetch("http://localhost:5300/user/login", {
+        fetch("https://magikatg.herokuapp.com/user/login", {
             method: 'POST', 
             body: JSON.stringify({email, password}), // data can be `string` or {object}!
             headers:{
@@ -78,7 +78,7 @@ function Login(props) {
 
     function getUser() {
         console.log('getting user')
-        fetch("http://localhost:5300/user/", {
+        fetch("https://magikatg.herokuapp.com/user/", {
             method: 'POST', 
             body: JSON.stringify({email: sessionStorage.getItem('email')}), // data can be `string` or {object}!
             headers:{

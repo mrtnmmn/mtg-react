@@ -64,7 +64,7 @@ function Card(props) {
             cardPrice = 0
         }
 
-        fetch("http://localhost:5300/card/", {
+        fetch("https://magikatg.herokuapp.com/card/", {
             method: 'post', 
             body: JSON.stringify({_id: card.id, cardQuantity: 1, cardName: card.name, cardPrice: cardPrice}), 
             headers:{
@@ -76,7 +76,7 @@ function Card(props) {
     }
 
     function subtractOne(card) {
-        fetch("http://localhost:5300/card/subtractOne", {
+        fetch("https://magikatg.herokuapp.com/card/subtractOne", {
             method: 'post', 
             body: JSON.stringify({_id: card.id}), 
             headers:{

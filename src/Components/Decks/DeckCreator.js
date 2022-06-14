@@ -400,7 +400,7 @@ function DeckCreator(props) {
     }
 
     function saveDeck() {
-        fetch("http://localhost:5300/deck/", {
+        fetch("https://magikatg.herokuapp.com/deck/", {
             method: 'POST', 
             body: JSON.stringify({deck, editing}), // data can be `string` or {object}!
             headers:{

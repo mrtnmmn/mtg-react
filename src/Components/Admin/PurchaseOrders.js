@@ -15,7 +15,7 @@ function PurchaseOrders(props) {
     const apiFindByName = "https://api.scryfall.com/cards/named?fuzzy="
 
     function fetchAll() {
-        fetch("http://localhost:5300/purchaseOrders/", {
+        fetch("https://magikatg.herokuapp.com/purchaseOrders/", {
             method: "get",
             headers: {
                 "Content-Type": "application/json",
@@ -32,7 +32,7 @@ function PurchaseOrders(props) {
         if (order && order.deckIds) {
             if (order.deckIds.length !== 0) {
                 for (const deck of order.deckIds) {
-                    fetch("http://localhost:5300/deck/getOneFromId", {
+                    fetch("https://magikatg.herokuapp.com/deck/getOneFromId", {
                         method: "post",
                         body: JSON.stringify({ _id: deck }),
                         headers: {
@@ -97,7 +97,7 @@ function PurchaseOrders(props) {
     }
 
     function submitOrder() {
-        fetch("http://localhost:5300/purchaseOrders/", {
+        fetch("https://magikatg.herokuapp.com/purchaseOrders/", {
             method: "delete",
             body: JSON.stringify({ _id: selectedItem._id }),
             headers: {
@@ -119,7 +119,7 @@ function PurchaseOrders(props) {
     }
 
     function checkStockItem(order) {
-        fetch("http://localhost:5300/purchaseOrders/checkStock", {
+        fetch("https://magikatg.herokuapp.com/purchaseOrders/checkStock", {
             method: "post",
             body: JSON.stringify({ _id: order._id }),
             headers: {

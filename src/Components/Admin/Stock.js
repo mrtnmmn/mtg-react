@@ -10,7 +10,7 @@ function Stock(props) {
     const [filterPrice, setFilterPrice] = useState(0)
 
     function fetchAll() {
-        fetch("http://localhost:5300/card/", {
+        fetch("https://magikatg.herokuapp.com/card/", {
             method: "get",
             headers: {
                 "Content-Type": "application/json",
@@ -67,7 +67,7 @@ function Stock(props) {
     }
 
     function addOne(cardId) {
-        fetch("http://localhost:5300/card/", {
+        fetch("https://magikatg.herokuapp.com/card/", {
             method: "post",
             body: JSON.stringify({ _id: cardId }),
             headers: {
@@ -93,7 +93,7 @@ function Stock(props) {
     }
 
     function subtractOne(cardId) {
-        fetch("http://localhost:5300/card/subtractOne", {
+        fetch("https://magikatg.herokuapp.com/card/subtractOne", {
             method: "post",
             body: JSON.stringify({ _id: cardId }),
             headers: {

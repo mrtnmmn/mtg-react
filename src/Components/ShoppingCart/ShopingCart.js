@@ -82,7 +82,7 @@ function ShopingCart(props) {
 
     function submitPurchaseOrder() {
         console.log(generatedPurchaseOrder)
-        fetch("http://localhost:5300/purchaseOrders/", {
+        fetch("https://magikatg.herokuapp.com/purchaseOrders/", {
             method: 'post', 
             body: JSON.stringify({order: generatedPurchaseOrder}), 
             headers:{

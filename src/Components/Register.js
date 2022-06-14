@@ -13,7 +13,7 @@ function Register() {
 
     function fetchRegister() {
 
-        fetch("http://localhost:5300/user/register", {
+        fetch("https://magikatg.herokuapp.com/user/register", {
             method: 'POST', 
             body: JSON.stringify({username, email, password, admin: false}), // data can be `string` or {object}!
             headers:{
