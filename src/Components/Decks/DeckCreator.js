@@ -65,7 +65,7 @@ function DeckCreator(props) {
             cardTypes: cardTypes,
             landsColors: landsColors,
             //deckLegality: deckLegality
-            deckPrice: deckPrice
+            deckPrice: deckPrice.toFixed(2)
         })
     }
 
