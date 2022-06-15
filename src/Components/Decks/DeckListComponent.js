@@ -4,9 +4,18 @@ function DeckListComponent(props) {
     const deck = props.deck;
     const selectedDeck = props.selectedDeck;
     const setSelectedDeck = props.setSelectedDeck;
+    const setSelectedCard = props.setSelectedCard
+
+    const apiFindByName = "https://api.scryfall.com/cards/named?fuzzy="
 
     function selectDeck() {
         setSelectedDeck(deck);
+    }
+
+    function selectCard(cardName) {
+        fetch(apiFindByName + cardName)
+            .then((res) => res.json())
+            .then((data) => setSelectedCard(data))
     }
 
     return (
@@ -22,7 +31,7 @@ function DeckListComponent(props) {
                             <h2 className="titleCards">Cards: </h2>
                             {deck.cards.map((card) => {
                                 return (
-                                    <div>
+                                    <div onClick={() => {selectCard(card.cardName)}}>
                                         <span className="cardName">
                                             {card.cardQuantity !== 1
                                                 ? "(x" + card.cardQuantity + ") "
