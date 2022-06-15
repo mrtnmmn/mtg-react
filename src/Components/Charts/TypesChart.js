@@ -5,8 +5,6 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 function TypesChart(props) {
 
-    console.log(props.types)
-
     let unprocessedData = Object.entries(props.types)
     let labelsData = []
     let datasetsData = []

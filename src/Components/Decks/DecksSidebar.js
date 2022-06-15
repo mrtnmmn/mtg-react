@@ -39,8 +39,6 @@ function DecksSidebar(props) {
     }
 
     function addDeckToCart() {
-        console.log('adding to cart')
-        console.log(selectedDeck)
         addDeck(selectedDeck)
     }
 

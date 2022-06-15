@@ -58,7 +58,6 @@ function Decks(props) {
             }
         }).then(res => res.json())
         .catch(error => console.error('Error:', error))
-        //.then(response => console.log(response))
         .then(response => setDecks([...decksIds, ...response.data]))
 
     }

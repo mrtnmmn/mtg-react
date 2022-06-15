@@ -41,7 +41,6 @@ function PurchaseOrders(props) {
                     })
                         .then((res) => res.json())
                         .catch((error) => console.error("Error:", error))
-                        //.then(response => console.log(response.data))
                         .then((response) =>
                             setSelectedItemDecks([
                                 ...selectedItemDecks,
@@ -57,7 +56,6 @@ function PurchaseOrders(props) {
                 for (const card of order.cardIds) {
                     fetch("https://api.scryfall.com/cards/" + card)
                         .then((res) => res.json())
-                        //.then((response) => console.log(response))
                         .then((response) =>
                             setSelectedItemCards([
                                 ...selectedItemCards,
@@ -129,7 +127,6 @@ function PurchaseOrders(props) {
             .then((res) => res.json())
             .catch((error) => console.error("Error:", error))
             .then((response) => setStock(response.data))
-            .then(console.log(stock))
     }
 
     useEffect(() => {
@@ -151,7 +148,6 @@ function PurchaseOrders(props) {
                                     key={order._id}
                                     onClick={() => {
                                         divClicked(order)
-                                        console.log(order)
                                     }}
                                 >
                                     Purchase Id: {order._id}

@@ -46,8 +46,6 @@ function CardFinder(props) {
 
     function fetchAPI(name) {
 
-        console.log(api+name)
-
         fetch(api + name)
         .then((res) => res.json())
         .then((data) => setCard(data))

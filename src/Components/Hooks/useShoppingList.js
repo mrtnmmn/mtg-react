@@ -22,7 +22,6 @@ function useShoppingList() {
 
     const addDeck = (deck) => {
         setDecks([...decks, deck])
-        console.log('addDeck')
     }
 
     const deleteDeck = (deckId) => {
@@ -39,10 +38,6 @@ function useShoppingList() {
         setCards([])
         setDecks([])
     }
-
-    useEffect(() => {
-        console.log(decks)
-    }, [decks])
 
     return [decks, cards, addDeck, deleteDeck, addCard, deleteCard, deleteAll]
 }

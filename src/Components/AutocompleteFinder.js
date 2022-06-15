@@ -102,7 +102,6 @@ function AutocompleteFinder(props) {
                             name="card"
                             value={cardName}
                             onInputChange={handleInputChange}
-                            //onChange={() => (console.log("change"))}
                             renderInput={(params) => <TextField {...params} label="" />}
                         />
                     </div>

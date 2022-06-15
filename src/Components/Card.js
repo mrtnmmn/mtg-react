@@ -17,9 +17,6 @@ function Card(props) {
     const isAdmin = props.isAdmin
     const addCard = props.addCard
 
-
-    console.log(card)
-
     let hasStats = true
 
     if (!card.power) {
@@ -30,7 +27,6 @@ function Card(props) {
         setConvertedMana([])
         if (mana) {
             for (let i = 0; i < mana.length; i = i + 3) {
-                console.log(card.mana_cost[i+1])
                 switch (mana[i+1]) {
                     case 'B':
                         setConvertedMana(convertedMana => [...convertedMana, <img src={black} className='mana'></img>])
@@ -55,8 +51,6 @@ function Card(props) {
     } ,[props.card])
 
     function addOne(card) {
-        console.log(card)
-
         let cardPrice 
         if (card.prices.eur !== null) {
             cardPrice = card.prices.eur
@@ -72,7 +66,6 @@ function Card(props) {
             }
         }).then(res => res.json())
         .catch(error => console.log('Error: ', error))
-        .then(console.log('finished'))
     }
 
     function subtractOne(card) {
@@ -84,7 +77,6 @@ function Card(props) {
             }
         }).then(res => res.json())
         .catch(error => console.log('Error: ', error))
-        .then(response => console.log(response))
     }
 
     return (  

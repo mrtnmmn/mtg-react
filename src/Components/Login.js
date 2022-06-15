@@ -64,7 +64,6 @@ function Login(props) {
         }).then(res => res.json())
         .catch(error => console.error('Error:', error))
         .then(response => {           
-            console.log(response)
             if (response.error) {
                 setLoginError(true)
             } else {
@@ -77,7 +76,6 @@ function Login(props) {
     }
 
     function getUser() {
-        console.log('getting user')
         fetch("https://magikatg.herokuapp.com/user/", {
             method: 'POST', 
             body: JSON.stringify({email: sessionStorage.getItem('email')}), // data can be `string` or {object}!

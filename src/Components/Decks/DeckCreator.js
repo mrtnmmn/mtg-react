@@ -256,8 +256,6 @@ function DeckCreator(props) {
 
     const deleteCard = (deleteCard) => {
 
-        console.log(deleteCard)
-
         let deleteCardId = deleteCard.cardId
 
         let deleteCardType = deleteCard.type
@@ -450,7 +448,7 @@ function DeckCreator(props) {
                 }
                 <div className="priceAndSaveButton" >
                     <div className="price" hidden={cards.length === 0}>Price: {(deckPrice).toFixed(2)}€</div>
-                    <button className="saveButton" onClick={() => {console.log(deck); saveDeck()}} hidden={cards.length === 0}>Save</button>
+                    <button className="saveButton" onClick={() => {saveDeck()}} hidden={cards.length === 0}>Save</button>
                 </div>
             </div>
             <div className="cardFinderDiv">

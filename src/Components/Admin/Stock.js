@@ -32,7 +32,6 @@ function Stock(props) {
     function applyFilters() {
         let newCards = cards.filter((card) => {
             if (filterName.length !== 0) {
-                console.log(card)
                 if ((card.cardName).toLowerCase().includes(filterName.toLowerCase())) {
                     return card
                 }
@@ -40,8 +39,6 @@ function Stock(props) {
                 return card
             }
         })
-
-        console.log(newCards)
 
         newCards = newCards.filter((card) => {
             if (filterPrice !== 0) {
@@ -76,7 +73,6 @@ function Stock(props) {
         })
             .then((res) => {
                 if (res.status === 200) {
-                    console.log("correct")
                     let updatedCards = cards.filter((card) => {
                         if (card._id === cardId) {
                             let newCard = card
@@ -102,7 +98,6 @@ function Stock(props) {
         })
             .then((res) => {
                 if (res.status === 200) {
-                    console.log("correct")
                     let updatedCards = cards.filter((card) => {
                         if (card._id === cardId) {
                             let newCard = card

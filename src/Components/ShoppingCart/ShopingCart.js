@@ -19,7 +19,6 @@ function ShopingCart(props) {
     const [purchased, setPurchased] = useState(false)
 
     useEffect(() => {
-        console.log(decks)
         setCardsLength(cards.length)
         setDecksLength(decks.length)
         getCardPrices()
@@ -81,7 +80,6 @@ function ShopingCart(props) {
     }
 
     function submitPurchaseOrder() {
-        console.log(generatedPurchaseOrder)
         fetch("https://magikatg.herokuapp.com/purchaseOrders/", {
             method: 'post', 
             body: JSON.stringify({order: generatedPurchaseOrder}), 
@@ -90,7 +88,6 @@ function ShopingCart(props) {
             }
         }).then(res => res.json())
         .catch(error => console.error('Error:', error))
-        .then(response => console.log(response.data))
         .then(deleteAll())
         .then(setPurchased(true))
 
