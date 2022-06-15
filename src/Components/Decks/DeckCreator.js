@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { MenuItem, FormControl, InputLabel, Select } from '@mui/material';
 
 import '../../Css/DeckCreator.css'
 import AutocompleteFinder from "../AutocompleteFinder";
-import ColorsChart from "../Charts/ColorsChart";
 import DeckCreatorStatistics from "./DeckCreatorStatistics";
-import { width } from "@mui/system";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 function DeckCreator(props) {
 
@@ -431,6 +430,9 @@ function DeckCreator(props) {
         <div className="mainDeckCreatorDiv">
             <div className="mainCreationDiv">    
                 <div className="titleAndLegality">
+                    <button className="returnButton" onClick={() => {props.setCreating(false)}}>
+                        <FontAwesomeIcon icon={faArrowLeft} className='colored'/>
+                    </button>
                     <form onSubmit={handleSubmit}>
                         <label>Title: </label>
                         <input type="text" value={deckName} name="deckName" onChange={handleChange} className='inputName'></input>

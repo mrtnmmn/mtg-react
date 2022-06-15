@@ -129,7 +129,7 @@ function Decks(props) {
                     :<></>
                     }
                     {creating?
-                    <DeckCreator deck={selectedDeck}/>
+                    <DeckCreator deck={selectedDeck} setCreating={setCreating}/>
                     : <></>
                     }
                 </div>

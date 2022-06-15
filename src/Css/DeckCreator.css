@@ -186,6 +186,13 @@
     font-weight: 800;
 }
 
+.returnButton {
+    background-color: transparent;
+    border: 0px;
+    font-size: xx-large;
+    font-weight: 1000;
+}
+
 @media (width < 900px) {
     .mainDeckCreatorDiv {
         flex-direction: column;

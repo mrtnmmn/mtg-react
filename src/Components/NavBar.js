@@ -5,8 +5,6 @@ import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
-import useLogin from './Hooks/useLogin'
-
 function NavBar(props) {
 
     const [token, setToken] = useState()
