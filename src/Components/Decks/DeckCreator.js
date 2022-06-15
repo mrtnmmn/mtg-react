@@ -56,17 +56,33 @@ function DeckCreator(props) {
     },[cards])
 
     function generateDeck() {
-        setDeck({
-            deckName: deckName,
-            user: sessionStorage.getItem('userId'),
-            cards: cards,
-            cardCosts: cardCosts,
-            cardColors: cardColors,
-            cardTypes: cardTypes,
-            landsColors: landsColors,
-            //deckLegality: deckLegality
-            deckPrice: deckPrice.toFixed(2)
-        })
+
+        if (props.deck._id) {
+            setDeck({
+                _id: props.deck._id,
+                deckName: deckName,
+                user: sessionStorage.getItem('userId'),
+                cards: cards,
+                cardCosts: cardCosts,
+                cardColors: cardColors,
+                cardTypes: cardTypes,
+                landsColors: landsColors,
+                //deckLegality: deckLegality
+                deckPrice: deckPrice.toFixed(2)
+            })
+        } else {
+            setDeck({
+                deckName: deckName,
+                user: sessionStorage.getItem('userId'),
+                cards: cards,
+                cardCosts: cardCosts,
+                cardColors: cardColors,
+                cardTypes: cardTypes,
+                landsColors: landsColors,
+                //deckLegality: deckLegality
+                deckPrice: deckPrice.toFixed(2)
+            })
+        }
     }
 
     let handleSubmit = async (e) => {

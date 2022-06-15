@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import '../../Css/Decks.css'
-import ColorsChart from "../Charts/ColorsChart";
 import DeckCreator from "./DeckCreator";
 import DeckListComponent from "./DeckListComponent";
 import DecksSidebar from "./DecksSidebar";
+import Card from '../Card'
 
 import { Link } from 'react-router-dom';
+
 
 function Decks(props) {
 
@@ -15,9 +16,12 @@ function Decks(props) {
     const [creating, setCreating] = useState(false)
     const [mainMenu, setMainMenu] = useState(true)
     const [res, setRes] = useState()
+    const [selectedCard, setSelectedCard] = useState()
 
     const login = props.login
     const addDeck = props.addDeck
+    const isAdmin = props.admin
+    const addCard = props.addCard
 
     useEffect(() => {
 
@@ -85,6 +89,9 @@ function Decks(props) {
 
     }
 
+    useEffect(() => {
+        console.log(selectedCard)
+    }, [selectedCard])
 
     return (  
         
@@ -97,7 +104,7 @@ function Decks(props) {
                             <div className="decksListDiv">
                                 {decks.map((deck) => {
                                         if (deck._id){ 
-                                            return <DeckListComponent deck={deck} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} key={deck._id}/>
+                                            return <DeckListComponent deck={deck} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} setSelectedCard={setSelectedCard} key={deck._id}/>
                                         }
                                     }
                                     //<div className="deckDivInDecksList" key={deck._id} onClick={() => setSelectedDeck(deck)}>
@@ -111,6 +118,11 @@ function Decks(props) {
 
                         <div className="decksSidebar">
                             <DecksSidebar deck={selectedDeck} setSelectedDeck={setSelectedDeck} setCreating={setCreating} deletedOne={deletedOne} addDeck={addDeck}/>
+                            { selectedCard ?
+                                <Card card={selectedCard} isAdmin={isAdmin} addCard={addCard} />
+                            :
+                                <></>
+                            }
                         </div>
                     </div>
                     :<></>

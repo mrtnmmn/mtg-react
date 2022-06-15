@@ -42,6 +42,10 @@
     width: 25%;
 }
 
+.decksSidebar .mainDivCard {
+    flex-direction: column;
+}
+
 .noDecksMessage {
     display: flex;
     flex-direction: column;
